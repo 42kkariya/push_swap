@@ -15,17 +15,34 @@
 static void	push(t_list **from, t_list **to)
 {
 	t_list	*node;
+	t_list	*from_tail;
+	t_list	*to_tail;
 
 	if (!*from)
 		return ;
 	node = *from;
-	*from = (*from)->next;
-	if (*from)
-		(*from)->prev = NULL;
-	node->next = *to;
-	if (*to)
+	from_tail = node->prev;
+	if (node->next == node)
+		*from = NULL;
+	else
+	{
+		*from = node->next;
+		(*from)->prev = from_tail;
+		from_tail->next = *from;
+	}
+	if (!*to)
+	{
+		node->next = node;
+		node->prev = node;
+	}
+	else
+	{
+		to_tail = (*to)->prev;
+		node->next = *to;
 		(*to)->prev = node;
-	node->prev = NULL;
+		node->prev = to_tail;
+		to_tail->next = node;
+	}
 	*to = node;
 }
 

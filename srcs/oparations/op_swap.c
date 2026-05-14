@@ -16,7 +16,7 @@ static void	swap(t_list **stack)
 {
 	int	tmp;
 
-	if (!*stack || !(*stack)->next)
+	if (!*stack || (*stack)->next == *stack)
 		return ;
 	tmp = (*stack)->nbr;
 	(*stack)->nbr = (*stack)->next->nbr;
