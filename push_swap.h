@@ -17,7 +17,8 @@
 # include <stdlib.h>
 
 # define ERROR 1
-# define INT_RANGE_SIZE 4294967296
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 // frag
 
@@ -33,11 +34,11 @@ void	ft_join_list(a_list **cy_list);
 a_list	*ft_listlast(a_list *cy_list);
 a_list	*ft_listnew(int nb);
 int		ft_make_cy_list(a_list	**cy_list, t_frag *frag, int argc, char **argv);
-void	ft_list_add_back(a_list ***cy_list, a_list	*new);
+void	ft_list_add_back(a_list **cy_list, a_list	*new);
 
 // src
 
-void	ft_argc_check(int argc, char **argv);
+void	ft_argv_check(int argc, char **argv);
 int		ft_atoi(char *nb);
 void	ft_exit(int error);
 
@@ -56,6 +57,7 @@ typedef struct s_flag
 	int	med;
 	int	com;
 	int	ada;
+	int bench;
 } t_frag;
 
 #endif

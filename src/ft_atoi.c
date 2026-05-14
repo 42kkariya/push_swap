@@ -18,7 +18,8 @@ int	ft_atoi(char *nb)
 	long	res;
 
 	sign = 1;
-	if (*nb == '-')
+	res = 0;
+	if (*nb == '-' || *nb == '+')
 	{
 		nb++;
 		if (*nb >= '0' && *nb <= '9')
@@ -26,6 +27,12 @@ int	ft_atoi(char *nb)
 		else
 			ft_exit(ERROR);
 	}
-	res = *nb - '0';
+	while (*nb >= '0' && *nb <= '9')
+	{
+		res = res * 10 + (*nb - '0');
+		nb++;
+	}
+	if (res > INT_MAX || res < INT_MIN)
+		ft_exit(ERROR);
 	return (res * sign);
 }

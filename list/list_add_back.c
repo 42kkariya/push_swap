@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-void	ft_list_add_back(a_list ***cy_list, a_list	*new)
+void	ft_list_add_back(a_list **cy_list, a_list	*new)
 {
 	a_list	*last;
 
-	if (**cy_list == NULL)
-		**cy_list = new;
+	if (*cy_list == NULL)
+		*cy_list = new;
 	else
 	{
-		last = ft_listlast(**cy_list);
+		last = ft_listlast(*cy_list);
 		last -> next = new;
 		new -> prev = last;
 	}

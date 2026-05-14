@@ -12,16 +12,16 @@
 
 #include "push_swap.h"
 
-void	ft_argc_check(int argc, char **argv)
+void	ft_argv_check(int argc, char **argv)
 {
 	size_t	i;
 	int		*map;
 	int		nbr;
 
-	map = malloc(sizeof(int) * (argc - 2));
+	map = malloc(sizeof(int) * (argc - 1));
 	if (!map)
 		ft_exit(ERROR);
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		if ((argv[i][0] >= '0' && argv[i][0] <= '9') || argv[i][0] == '-')
@@ -30,7 +30,7 @@ void	ft_argc_check(int argc, char **argv)
 		}
 		i++;
 	}
-	ft_nbrcheck(map, argc - 2);
+	ft_nbrcheck(map, argc - 1);
 	free(map);
 	return ;
 }

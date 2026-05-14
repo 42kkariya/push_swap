@@ -17,5 +17,5 @@ void	zerofrag(t_frag *frag)
 	frag -> sim = 0;
 	frag -> med = 0;
 	frag -> com = 0;
-	frag -> ada = 0;
+	frag -> ada = 1;
 }

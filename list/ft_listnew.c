@@ -19,5 +19,6 @@ a_list	*ft_listnew(int nb)
 	newnode = malloc(sizeof(a_list));
 	newnode -> nbr = nb;
 	newnode -> next = NULL;
+	newnode -> prev = NULL;
 	return (newnode);
 }

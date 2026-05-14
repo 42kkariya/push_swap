@@ -21,7 +21,8 @@ int	ft_make_cy_list(a_list	**cy_list, t_frag *frag, int argc, char **argv)
 	check = 0;
 	while (i < argc)
 	{
-		if ((argv[i][0] >= '0' && argv[i][0] <= '9') || argv[i] == '-')
+		if ((argv[i][0] >= '0' && argv[i][0] <= '9') 
+				|| argv[i][0] == '-' || argv[i][0] == '+')
 			ft_list_add_back(&cy_list, ft_listnew(ft_atoi(argv[i++])));
 		else if (argv[i][0] == '-' && argv[i][1] == '-')
 		{
