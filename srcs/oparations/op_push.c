@@ -12,24 +12,32 @@
 
 #include "../../includes/push_swap.h"
 
-static void	push(t_list **from, t_list **to)
+static t_list    *detach(t_list **from)
 {
-	t_list	*node;
-	t_list	*from_tail;
-	t_list	*to_tail;
+	t_list    *node;
+	t_list    *tail;
 
 	if (!*from)
-		return ;
+		return (NULL);
 	node = *from;
-	from_tail = node->prev;
+	tail = node->prev;
 	if (node->next == node)
 		*from = NULL;
 	else
 	{
 		*from = node->next;
-		(*from)->prev = from_tail;
-		from_tail->next = *from;
+		(*from)->prev = tail;
+		tail->next = *from;
 	}
+	return (node);
+}
+
+static void    attach(t_list *node, t_list **to)
+{
+	t_list    *tail;
+
+	if (!node)
+		return ;
 	if (!*to)
 	{
 		node->next = node;
@@ -37,13 +45,18 @@ static void	push(t_list **from, t_list **to)
 	}
 	else
 	{
-		to_tail = (*to)->prev;
+		tail = (*to)->prev;
 		node->next = *to;
 		(*to)->prev = node;
-		node->prev = to_tail;
-		to_tail->next = node;
+		node->prev = tail;
+		tail->next = node;
 	}
 	*to = node;
+}
+
+static void	push(t_list **from, t_list **to)
+{
+	attach(detach(from), to);
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)
