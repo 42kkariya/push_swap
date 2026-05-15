@@ -6,33 +6,35 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:28:00 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/14 17:23:32 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/15 14:40:16 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *nb)
+int	ft_atoi(char *nb, t_alist **cy_list)
 {
 	int		sign;
 	long	res;
+	size_t	i;
 
-	sign = 1;
 	res = 0;
-	if (*nb == '-' || *nb == '+')
+	i = 0;
+	sign = 1;
+	if (nb[i] == '-' || nb[i] == '+')
 	{
-		nb++;
-		if (*nb >= '0' && *nb <= '9')
+		if ((nb[i + 1] >= '0' && nb[i + 1] <= '9') && nb[i] == '-')
 			sign = -1;
-		else
-			ft_exit(ERROR);
+		else if (!(nb[i + 1] >= '0' && nb[i + 1] <= '9'))
+			ft_exit(ERROR, *cy_list);
+		i++;
 	}
-	while (*nb >= '0' && *nb <= '9')
+	while (nb[i] >= '0' && nb[i] <= '9')
 	{
-		res = res * 10 + (*nb - '0');
-		nb++;
+		res = res * 10 + (nb[i] - '0');
+		i++;
 	}
-	if (res > INT_MAX || res < INT_MIN)
-		ft_exit(ERROR);
+	if (res > INT_MAX || res < INT_MIN || nb[i] != NULL)
+		ft_exit(ERROR, *cy_list);
 	return (res * sign);
 }

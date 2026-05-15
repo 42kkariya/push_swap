@@ -6,46 +6,59 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:02:36 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/14 17:22:50 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/15 14:40:04 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_argv_check(int argc, char **argv)
+void	ft_argv_check(int argc, char **argv, t_alist **cy_list)
 {
 	size_t	i;
 	int		*map;
-	int		nbr;
+	int		j;
 
 	map = malloc(sizeof(int) * (argc - 1));
 	if (!map)
-		ft_exit(ERROR);
+	{
+		ft_printf("%s", "Erorr");
+		exit (ERROR);
+	}
 	i = 1;
+	j = 0;
 	while (i < argc)
 	{
-		if ((argv[i][0] >= '0' && argv[i][0] <= '9') || argv[i][0] == '-')
+		if ((argv[i][0] >= '0' && argv[i][0] <= '9')
+		|| ((argv[i][0] == '-' || argv[i][0] == '+')
+		&& (argv[i][1] >= '0' && argv[i][1] <= '9')))
 		{
-			map[i] = ft_atoi(argv[i]);
+			map[j] = ft_atoi(argv[i], cy_list);
+			j++;
 		}
 		i++;
 	}
-	ft_nbrcheck(map, argc - 1);
+	ft_nbrcheck(map, argc - 1, j);
 	free(map);
-	return ;
 }
 
-void	ft_nbrcheck(int *map, int size)
+void	ft_nbrcheck(int *map, int size, int j)
 {
 	size_t	i;
 
 	i = 0;
+	if (j == 0)
+	{
+		free(map);
+		ft_printf("%s", "Error");
+		exit(ERROR);
+	}
 	while (i < size)
 	{
 		if (ft_check(map[i], &map[i + 1], size - (i + 1)))
 		{
 			free(map);
-			ft_exit(ERROR);
+			ft_printf("%s", "Error");
+			exit(ERROR);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/14 17:32:53 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/15 14:40:55 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	a_list	*cy_list;
+	t_alist	*cy_list;
 	t_frag	frag;
 	int		check;
 
 	cy_list = NULL;
 	zerofrag(&frag);
-	ft_argv_check(argc, argv);
-	if (ft_make_cy_list(&cy_list, &frag, argc, argv))
-		ft_exit(ERROR);
+	ft_argv_check(argc, argv, &cy_list);
+	ft_make_cy_list(&cy_list, &frag, argc, argv);
+	if (frag.check == 0)
+		frag.ada = 1;
 }

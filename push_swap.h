@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/14 17:32:39 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/15 14:41:25 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,34 +22,30 @@
 
 // frag
 
-t_frag	*ft_check_frag(t_frag *frag, char *str);
-size_t	sim_check(char *str, char *sim);
-size_t	med_check(char *str, char *med);
-size_t	com_check(char *str, char *com);
-size_t	ada_check(char *str, char *ada);
+void	ft_check_frag(char	*argv, t_frag *frag, t_alist **cy_list);
+int		ft_free_strcmp(char *dest, char *src, t_alist **cy_list);
+void	ft_frag_nbr_check(t_frag *frag, t_alist **cy_list);
 
 // list
 
-void	ft_join_list(a_list **cy_list);
-a_list	*ft_listlast(a_list *cy_list);
-a_list	*ft_listnew(int nb);
-int		ft_make_cy_list(a_list	**cy_list, t_frag *frag, int argc, char **argv);
-void	ft_list_add_back(a_list **cy_list, a_list	*new);
+void	ft_join_list(t_alist **cy_list);
+t_alist	*ft_listlast(t_alist *cy_list);
+t_alist	*ft_listnew(int nb, t_alist **cy_list);
+void	ft_make_cy_list(t_alist	**cy_list, t_frag *frag, int argc, char **argv);
+void	ft_list_add_back(t_alist **cy_list, t_alist	*new);
 
 // src
 
-void	ft_argv_check(int argc, char **argv);
-int		ft_atoi(char *nb);
-void	ft_exit(int error);
+void	ft_argv_check(int argc, char **argv, t_alist **cy_list);
+int		ft_atoi(char *nb, t_alist **cy_list);
+void	ft_exit(int error, t_alist *cy_list);
 
-
-
-typedef struct s_list
+typedef struct _list
 {
 	int				nbr;
 	struct s_list	*next;
 	struct s_list	*prev;
-} a_list;
+}	t_alist;
 
 typedef struct s_flag
 {
@@ -57,7 +53,8 @@ typedef struct s_flag
 	int	med;
 	int	com;
 	int	ada;
-	int bench;
-} t_frag;
+	int	ben;
+	int	check;
+}	t_frag;
 
 #endif
