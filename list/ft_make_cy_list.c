@@ -14,8 +14,8 @@
 
 void	ft_make_cy_list(t_alist	**cy_list, t_frag *frag, int argc, char **argv)
 {
-	size_t	i;
-	int		nb;
+	int	i;
+	int	nb;
 
 	i = 1;
 	while (i < argc)

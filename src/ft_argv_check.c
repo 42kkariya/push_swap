@@ -14,14 +14,14 @@
 
 void	ft_argv_check(int argc, char **argv, t_alist **cy_list)
 {
-	size_t	i;
+	int		i;
 	int		*map;
 	int		j;
 
 	map = malloc(sizeof(int) * (argc - 1));
 	if (!map)
 	{
-		ft_printf("%s", "Erorr");
+		ft_printf("%s", "Error");
 		exit (ERROR);
 	}
 	i = 1;
@@ -37,13 +37,13 @@ void	ft_argv_check(int argc, char **argv, t_alist **cy_list)
 		}
 		i++;
 	}
-	ft_nbrcheck(map, argc - 1, j);
+	ft_nbrcheck(map, j);
 	free(map);
 }
 
-void	ft_nbrcheck(int *map, int size, int j)
+void	ft_nbrcheck(int *map, int j)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (j == 0)
@@ -52,9 +52,9 @@ void	ft_nbrcheck(int *map, int size, int j)
 		ft_printf("%s", "Error");
 		exit(ERROR);
 	}
-	while (i < size)
+	while (i < j)
 	{
-		if (ft_check(map[i], &map[i + 1], size - (i + 1)))
+		if (ft_check(map[i], &map[i + 1], j - (i + 1)))
 		{
 			free(map);
 			ft_printf("%s", "Error");
@@ -66,7 +66,7 @@ void	ft_nbrcheck(int *map, int size, int j)
 
 int	ft_check(int nb, int *map, int size)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < size)

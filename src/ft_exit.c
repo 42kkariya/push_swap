@@ -23,5 +23,5 @@ void	ft_exit(int error, t_alist *cy_list)
 		cy_list = p;
 	}
 	ft_printf("%s", "Error");
-	exit (ERROR);
+	exit (error);
 }

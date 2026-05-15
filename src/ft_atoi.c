@@ -34,7 +34,7 @@ int	ft_atoi(char *nb, t_alist **cy_list)
 		res = res * 10 + (nb[i] - '0');
 		i++;
 	}
-	if (res > INT_MAX || res < INT_MIN || nb[i] != NULL)
+	if (sign * res > INT_MAX || res * sign < INT_MIN || nb[i] != '\0')
 		ft_exit(ERROR, *cy_list);
 	return (res * sign);
 }

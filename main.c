@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_alist	*cy_list;
 	t_frag	frag;
-	int		check;
 
 	cy_list = NULL;
 	zerofrag(&frag);
