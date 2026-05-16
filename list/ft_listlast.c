@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_listlast.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:07:33 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 13:21:04 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/14 13:27:15 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 13:15:26 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_print_str(char *s)
+t_list	*ft_listlast(t_list *cy_list)
 {
-	int	i;
-
-	if (s == NULL)
+	while (cy_list -> next != NULL)
 	{
-		if (write(1, "(null)", 6) == -1)
-			return (-1);
-		return (6);
+		cy_list = cy_list -> next;
 	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (write(1, &s[i], 1) == -1)
-			return (-1);
-		i++;
-	}
-	return (i);
+	return (cy_list);
 }

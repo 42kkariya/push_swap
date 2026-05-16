@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:07:33 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 13:21:04 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/14 15:51:50 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 13:15:30 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_print_str(char *s)
+void	ft_exit(int error, t_list *cy_list)
 {
-	int	i;
+	t_list	*p;
 
-	if (s == NULL)
+	while (cy_list)
 	{
-		if (write(1, "(null)", 6) == -1)
-			return (-1);
-		return (6);
+		p = cy_list -> next;
+		free (cy_list);
+		cy_list = p;
 	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (write(1, &s[i], 1) == -1)
-			return (-1);
-		i++;
-	}
-	return (i);
+	ft_printf("%s", "Error");
+	exit (error);
 }

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_listnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:07:33 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 13:21:04 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/14 13:14:03 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 13:15:27 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_print_str(char *s)
+t_list	*ft_listnew(int nb, t_list **cy_list)
 {
-	int	i;
+	t_list	*newnode;
 
-	if (s == NULL)
-	{
-		if (write(1, "(null)", 6) == -1)
-			return (-1);
-		return (6);
-	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (write(1, &s[i], 1) == -1)
-			return (-1);
-		i++;
-	}
-	return (i);
+	newnode = malloc(sizeof(t_list));
+	if (!newnode)
+		ft_exit(ERROR, *cy_list);
+	newnode -> nbr = nb;
+	newnode -> next = NULL;
+	newnode -> prev = NULL;
+	return (newnode);
 }

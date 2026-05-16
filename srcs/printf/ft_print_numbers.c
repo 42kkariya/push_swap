@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:05:02 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/04 12:00:00 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:22:40 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
 int	ft_print_nbr(int n)
 {
