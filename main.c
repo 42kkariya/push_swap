@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 14:40:55 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:19 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_alist	*cy_list;
+	t_list	*cy_list;
 	t_frag	frag;
 
 	cy_list = NULL;

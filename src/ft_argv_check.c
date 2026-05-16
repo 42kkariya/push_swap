@@ -6,13 +6,13 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:02:36 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 14:40:04 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:29 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_argv_check(int argc, char **argv, t_alist **cy_list)
+void	ft_argv_check(int argc, char **argv, t_list **cy_list)
 {
 	int		i;
 	int		*map;

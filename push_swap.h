@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 19:03:41 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:21 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_list
 	int				nbr;
 	struct s_list	*next;
 	struct s_list	*prev;
-}	t_alist;
+}	t_list;
 
 typedef struct s_flag
 {
@@ -39,26 +39,26 @@ typedef struct s_flag
 
 // frag
 
-void	ft_check_frag(char	*argv, t_frag *frag, t_alist **cy_list);
+void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list);
 int		ft_strcmp(char *dest, char *src);
-void	ft_frag_nbr_check(t_frag *frag, t_alist **cy_list);
+void	ft_frag_nbr_check(t_frag *frag, t_list **cy_list);
 void	zerofrag(t_frag *frag);
 
 // list
 
-void	ft_join_list(t_alist **cy_list);
-t_alist	*ft_listlast(t_alist *cy_list);
-t_alist	*ft_listnew(int nb, t_alist **cy_list);
-void	ft_make_cy_list(t_alist	**cy_list, t_frag *frag, int argc, char **argv);
-void	ft_list_add_back(t_alist **cy_list, t_alist	*new);
+void	ft_join_list(t_list **cy_list);
+t_list	*ft_listlast(t_list *cy_list);
+t_list	*ft_listnew(int nb, t_list **cy_list);
+void	ft_make_cy_list(t_list	**cy_list, t_frag *frag, int argc, char **argv);
+void	ft_list_add_back(t_list **cy_list, t_list	*new);
 
 // src
 
-void	ft_argv_check(int argc, char **argv, t_alist **cy_list);
+void	ft_argv_check(int argc, char **argv, t_list **cy_list);
 void	ft_nbrcheck(int *map, int j);
 int		ft_check(int nb, int *map, int size);
-int		ft_atoi(char *nb, t_alist **cy_list);
-void	ft_exit(int error, t_alist *cy_list);
+int		ft_atoi(char *nb, t_list **cy_list);
+void	ft_exit(int error, t_list *cy_list);
 
 // printf
 

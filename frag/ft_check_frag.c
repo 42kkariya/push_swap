@@ -6,13 +6,13 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 13:38:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 14:38:06 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:24 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_frag(char	*argv, t_frag *frag, t_alist **cy_list)
+void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list)
 {
 	if (!ft_strcmp(argv, "simple"))
 	{
@@ -51,7 +51,7 @@ int	ft_strcmp(char *dest, char *src)
 	return ((unsigned char)dest[i] - (unsigned char)src[i]);
 }
 
-void	ft_frag_nbr_check(t_frag *frag, t_alist **cy_list)
+void	ft_frag_nbr_check(t_frag *frag, t_list **cy_list)
 {
 	if (frag -> check >= 2)
 		ft_exit(ERROR, *cy_list);

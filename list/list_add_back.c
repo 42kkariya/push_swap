@@ -6,15 +6,15 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:12 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 14:38:54 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:29 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_list_add_back(t_alist **cy_list, t_alist	*new)
+void	ft_list_add_back(t_list **cy_list, t_list	*new)
 {
-	t_alist	*last;
+	t_list	*last;
 
 	if (*cy_list == NULL)
 		*cy_list = new;

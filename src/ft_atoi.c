@@ -6,13 +6,13 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:28:00 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 14:40:16 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:30 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *nb, t_alist **cy_list)
+int	ft_atoi(char *nb, t_list **cy_list)
 {
 	int		sign;
 	long	res;

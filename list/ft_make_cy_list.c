@@ -6,13 +6,13 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:39:58 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/15 14:38:24 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:15:28 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_make_cy_list(t_alist	**cy_list, t_frag *frag, int argc, char **argv)
+void	ft_make_cy_list(t_list	**cy_list, t_frag *frag, int argc, char **argv)
 {
 	int	i;
 	int	nb;
