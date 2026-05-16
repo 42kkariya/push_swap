@@ -6,7 +6,7 @@
 #    By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/15 18:42:56 by mtaisei           #+#    #+#              #
-#    Updated: 2026/05/16 13:25:20 by mtaisei          ###   ########.fr        #
+#    Updated: 2026/05/16 22:18:16 by mtaisei          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,11 @@ SRCS =	main.c\
 		srcs/printf/ft_print_char.c \
 		srcs/printf/ft_print_str.c \
 		srcs/printf/ft_print_nbr_base.c \
-		srcs/printf/ft_print_numbers.c
+		srcs/printf/ft_print_numbers.c\
+		make_new_argv/make_new_argv.c\
+		make_new_argv/ft_split.c\
+		make_new_argv/ft_one_line.c\
+		make_new_argv/ft_argv_exit.c\
 
 OBJS = $(SRCS:.c=.o)
 

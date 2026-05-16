@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:39:58 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:15:28 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 21:47:01 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_make_cy_list(t_list	**cy_list, t_frag *frag, int argc, char **argv)
 	int	i;
 	int	nb;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		if (argv[i][0] == '-' && argv[i][1] == '-')

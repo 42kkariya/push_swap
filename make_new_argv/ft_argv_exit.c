@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_argv_exit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 22:29:46 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/16 21:20:48 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 21:22:16 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void  ft_argv_exit(char *str)
 {
-	t_list	*cy_list;
-	t_frag	frag;
-	char	**new_argv;
-	int		new_argc;
-
-	cy_list = NULL;
-	new_argv = make_new_argv(argc, argv, &new_argc);
-	zerofrag(&frag);
-	ft_argv_check(new_argc, new_argv, &cy_list);
-	ft_make_cy_list(&cy_list, &frag, new_argc, new_argv);
-	if (frag.check == 0)
-		frag.ada = 1;
-	
+    free(str);
+    ft_printf("%s", "Error");
+    exit(ERROR);
 }
