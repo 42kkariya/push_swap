@@ -41,4 +41,3 @@ void	ss(t_list **stack_a, t_list **stack_b)
 	swap(stack_b);
 	write(1, "ss\n", 3);
 }
-

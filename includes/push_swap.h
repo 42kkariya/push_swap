@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 # define ERROR 1
 # define INT_MIN -2147483648
@@ -62,16 +63,14 @@ void	ft_exit(int error, t_list *cy_list);
 
 // printf
 
-# include <stdarg.h>
-
-int    ft_printf(const char *format, ...);
-int    ft_print_char(int c);
-int    ft_print_str(char *s);
-int    ft_print_nbr(int n);
-int    ft_print_unsigned(unsigned int n);
-int    ft_print_hex(unsigned int n, char spec);
-int    ft_print_ptr(void *ptr);
-int    ft_print_nbr_base(unsigned long n, char *base);
+int		ft_printf(const char *format, ...);
+int		ft_print_char(int c);
+int		ft_print_str(char *s);
+int		ft_print_nbr(int n);
+int		ft_print_unsigned(unsigned int n);
+int		ft_print_hex(unsigned int n, char spec);
+int		ft_print_ptr(void *ptr);
+int		ft_print_nbr_base(unsigned long n, char *base);
 
 /* oparation */
 void	sa(t_list **stack_a);
@@ -87,6 +86,6 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* sort */
-void    sort_simple(t_list **stack_a, t_list **stack_b);
+void	sort_simple(t_list **stack_a, t_list **stack_b);
 
 #endif
