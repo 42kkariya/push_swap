@@ -10,36 +10,115 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// ---
-//   push_swap用 Radix Sort の考え方
+#include "../../includes/push_swap.h"
 
-//   通常のradix sortは桁（digit）ごとにソートしますが、push_swapではビットを使います。
+static int	stack_size(t_list *stack)
+{
+	t_list	*current;
+	int		i;
 
-//   基本アイデア
+	current = stack;
+	i = 0;
+	while (current->next != stack)
+	{
+		i++;
+		current = current->next;
+	}
+	return (i + 1);
+}
 
-//   数値を2進数で見て、下位ビットから順に1ビットずつ振り分けていきます。
+static int	*bubble_sort(int *arr, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
 
-//   数値: 3, 1, 2  → 2進数: 011, 001, 010
+	i = 0;
+	while (i < size)
+	{
+		j = i;
+		while (j < size)
+		{
+			if ((arr[i] > arr[j]) && (i != j))
+			{
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (arr);
+}
 
-//   ビット0（最下位）で振り分け:
-//     0 → stack_a に残す
-//     1 → stack_b に押し出す
+static void	assign_index(t_list *stack, int *arr, int size)
+{
+	int	i;
+	int	j;
 
-//   ビット1で振り分け:
-//     ...
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (stack->nbr == arr[j])
+			{
+				stack->nbr = j;
+				break ;
+			}
+			j++;
+		}
+		stack = stack->next;
+		i++;
+	}
+}
 
-//   手順
+static int	*to_index(t_list *stack, int size)
+{
+	int		*arr;
+	int		i;
 
-//   1. まず全数値をインデックス化（0, 1, 2, 3...に正規化）
-//   2. 最大値のビット数分だけループ
-//   3. 各ビットで：
-//     - ビットが0 → ra（stack_aで回す）
-//     - ビットが1 → pb（stack_bに押す）
-//   4. 1周したら pa で全部戻す
-//   5. 次のビットへ
+	arr = malloc(sizeof(int) * size);
+	if (!arr)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		arr[i] = stack->nbr;
+		stack = stack->next;
+		i++;
+	}
+	arr = bubble_sort(arr, size);
+	assign_index(stack, arr, size);
+	return (arr);
+}
 
-//   なぜインデックス化が必要？
+void	radix_sort(t_list **stack_a, t_list **stack_b)
+{
+	int	i;
+	int	bit;
+	int	size;
+	int	*arr;
 
-//   負の数やバラバラな値だとビット操作が複雑になるので、事前に順位（0始まりの連番）に変換します。
-
-//   ---
+	size = stack_size(*stack_a);
+	arr = to_index(*stack_a, size);
+	bit = 0;
+	while ((size - 1) >> bit)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (((*stack_a)->nbr >> bit) & 1)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+			i++;
+		}
+		while (*stack_b)
+			pa(stack_a, stack_b);
+		bit++;
+	}
+	free(arr);
+}
