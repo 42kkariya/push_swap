@@ -6,7 +6,7 @@
 /*   By: marvin <kkariya@student.42tokyo.jp>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:21:34 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 17:43:53 by marvin           ###   ########.fr       */
+/*   Updated: 2026/05/16 17:48:48 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,9 @@ void	sort_radix(t_list **stack_a, t_list **stack_b)
 		while (i < size)
 		{
 			if (((*stack_a)->nbr >> bit) & 1)
-				pb(stack_a, stack_b);
-			else
 				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
 			i++;
 		}
 		while (*stack_b)
