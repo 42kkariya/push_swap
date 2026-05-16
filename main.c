@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:07:33 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 13:21:04 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 13:15:19 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_print_str(char *s)
+int	main(int argc, char **argv)
 {
-	int	i;
+	t_list	*cy_list;
+	t_frag	frag;
 
-	if (s == NULL)
-	{
-		if (write(1, "(null)", 6) == -1)
-			return (-1);
-		return (6);
-	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (write(1, &s[i], 1) == -1)
-			return (-1);
-		i++;
-	}
-	return (i);
+	cy_list = NULL;
+	zerofrag(&frag);
+	ft_argv_check(argc, argv, &cy_list);
+	ft_make_cy_list(&cy_list, &frag, argc, argv);
+	if (frag.check == 0)
+		frag.ada = 1;
 }

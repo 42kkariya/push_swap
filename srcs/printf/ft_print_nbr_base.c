@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_nbr_base.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 17:39:17 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/04 12:00:00 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:21:03 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
 int	ft_print_nbr_base(unsigned long n, char *base)
 {
