@@ -12,7 +12,7 @@
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I. -Iprintf
+CFLAGS = -Wall -Wextra -Werror -I.
 RM = rm -fr
 
 SRCS =	main.c\
@@ -30,7 +30,12 @@ SRCS =	main.c\
 		srcs/printf/ft_print_char.c \
 		srcs/printf/ft_print_str.c \
 		srcs/printf/ft_print_nbr_base.c \
-		srcs/printf/ft_print_numbers.c
+		srcs/printf/ft_print_numbers.c \
+		srcs/sort/sort_simple.c \
+		srcs/oparations/op_push.c \
+		srcs/oparations/op_swap.c \
+		srcs/oparations/op_rotate.c \
+		srcs/oparations/op_reverse_rotate.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -38,7 +43,7 @@ all: $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.c push_swap.h
+%.o : %.c includes/push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {
 	t_list	*cy_list;
+	t_list	*stack_b;
+	t_list	*current;
 	t_frag	frag;
 
 	cy_list = NULL;
@@ -23,4 +25,13 @@ int	main(int argc, char **argv)
 	ft_make_cy_list(&cy_list, &frag, argc, argv);
 	if (frag.check == 0)
 		frag.ada = 1;
+	stack_b = NULL;
+	sort_simple(&cy_list, &stack_b);
+	current = cy_list;
+	do
+	{
+		ft_printf("%d, ", current->nbr);
+		current = current->next;
+	} while (current != cy_list);
+	return (0);
 }
