@@ -28,10 +28,11 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	sort_simple(&cy_list, &stack_b);
 	current = cy_list;
-	do
+	while (current->next != cy_list)
 	{
 		ft_printf("%d, ", current->nbr);
 		current = current->next;
-	} while (current != cy_list);
+	}
+	ft_printf("%d\n", current->nbr);
 	return (0);
 }
