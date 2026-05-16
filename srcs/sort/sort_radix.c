@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: marvin <kkariya@student.42tokyo.jp>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:21:34 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 15:21:34 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/16 17:43:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ static int	*to_index(t_list *stack, int size)
 	return (arr);
 }
 
-void	radix_sort(t_list **stack_a, t_list **stack_b)
+void	sort_radix(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
 	int	bit;

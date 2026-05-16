@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: marvin <kkariya@student.42tokyo.jp>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:23:21 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 17:43:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 
 /* sort */
 void	sort_simple(t_list **stack_a, t_list **stack_b);
-void	radix_sort(t_list **stack_a, t_list **stack_b);
+void	sort_radix(t_list **stack_a, t_list **stack_b);
 
 #endif
