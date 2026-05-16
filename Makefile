@@ -6,7 +6,7 @@
 #    By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/15 18:42:56 by mtaisei           #+#    #+#              #
-#    Updated: 2026/05/15 19:04:14 by mtaisei          ###   ########.fr        #
+#    Updated: 2026/05/16 13:25:20 by mtaisei          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,17 +26,11 @@ SRCS =	main.c\
 		src/ft_argv_check.c\
 		src/ft_atoi.c\
 		src/ft_exit.c\
-		printf/ft_printf.c\
-		printf/print/ft_putnbr_unsigned_base.c\
-		printf/print/ft_putnbr_signed.c\
-		printf/print/c_print.c\
-		printf/print/d_print.c\
-		printf/print/i_print.c\
-		printf/print/p_print.c\
-		printf/print/s_print.c\
-		printf/print/u_print.c\
-		printf/print/x_print.c\
-		printf/print/up_x_print.c
+		srcs/printf/ft_printf.c \
+		srcs/printf/ft_print_char.c \
+		srcs/printf/ft_print_str.c \
+		srcs/printf/ft_print_nbr_base.c \
+		srcs/printf/ft_print_numbers.c
 
 OBJS = $(SRCS:.c=.o)
 

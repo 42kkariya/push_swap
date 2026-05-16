@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:15:21 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 13:23:21 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,13 @@ void	ft_exit(int error, t_list *cy_list);
 
 # include <stdarg.h>
 
-int		ft_printf(const char *first, ...);
-int		change(va_list args, char c);
-int		ft_putnbr_unsigned_base(unsigned long nbr, char *base);
-int		ft_putnbr_signed(long nbr);
-int		c_print(char c);
-int		s_print(char *str);
-int		p_print(void *a);
-int		d_print(int nbr);
-int		i_print(int nbr);
-int		u_print(unsigned int nbr);
-int		x_print(unsigned int nbr);
-int		up_x_print(unsigned int nbr);
+int    ft_printf(const char *format, ...);
+int    ft_print_char(int c);
+int    ft_print_str(char *s);
+int    ft_print_nbr(int n);
+int    ft_print_unsigned(unsigned int n);
+int    ft_print_hex(unsigned int n, char spec);
+int    ft_print_ptr(void *ptr);
+int    ft_print_nbr_base(unsigned long n, char *base);
+
 #endif
