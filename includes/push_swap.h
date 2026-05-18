@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/18 15:35:59 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/18 17:10:35 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,11 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 /* sort */
 void	sort_simple(t_list **stack_a, t_list **stack_b);
 void	sort_radix(t_list **stack_a, t_list **stack_b);
+void	turk_sort(t_list **stack_a, t_list **stack_b);
 
 /* sort utils */
 int		stack_size(t_list *stack);
 int		get_rank(t_list *head, t_list *node);
+void	do_move(t_list **sa, t_list **sb, t_list *best, t_list *target);
 
 #endif
