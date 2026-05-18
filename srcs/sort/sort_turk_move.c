@@ -84,8 +84,8 @@ static void	do_rotate(t_list **sa, t_list **sb, t_list *best, t_list *target)
 			rrb(sb);
 }
 
-void	do_move(t_list **stack_a, t_list **stack_b, t_list *best, t_list *target)
+void	do_move(t_list **sa, t_list **sb, t_list *best, t_list *target)
 {
-	do_rotate(stack_a, stack_b, best, target);
-	pa(stack_a, stack_b);
+	do_rotate(sa, sb, best, target);
+	pa(sa, sb);
 }
