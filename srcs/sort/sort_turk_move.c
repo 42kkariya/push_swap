@@ -6,13 +6,13 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 17:56:55 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/18 15:29:56 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/18 15:34:58 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	get_rank(t_list *head, t_list *node)
+int	get_rank(t_list *head, t_list *node)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ static int	get_rank(t_list *head, t_list *node)
 	return (i);
 }
 
-static int	stack_size(t_list *stack)
+int	stack_size(t_list *stack)
 {
 	return (get_rank(stack, stack->prev) + 1);
 }
