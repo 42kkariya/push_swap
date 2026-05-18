@@ -6,26 +6,11 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 18:00:49 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 18:00:51 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/18 15:40:32 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-static int	stack_size(t_list *stack)
-{
-	t_list	*current;
-	int		i;
-
-	current = stack;
-	i = 0;
-	while (current->next != stack)
-	{
-		i++;
-		current = current->next;
-	}
-	return (i + 1);
-}
 
 static int	*bubble_sort(int *arr, int size)
 {
