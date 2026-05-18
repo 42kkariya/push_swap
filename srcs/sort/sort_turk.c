@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 18:00:59 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/18 17:10:57 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/18 17:15:01 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ static void	rotate_to_min(t_list **stack_a)
 //      b. find_target でその要素の挿入先を A から探す
 //      c. do_move で回転 + pa
 //   3. rotate_to_min で A の最小値を先頭に持ってくる
-void	turk_sort(t_list **stack_a, t_list **stack_b)
+void	sort_turk(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*best;
 	t_list	*target;
