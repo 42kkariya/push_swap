@@ -6,15 +6,15 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 21:20:48 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 21:22:16 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/19 13:26:54 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void  ft_argv_exit(char *str)
+void	ft_argv_exit(char *str)
 {
-    free(str);
-    ft_printf("%s", "Error");
-    exit(ERROR);
+	free(str);
+	ft_printf("%s", "Error");
+	exit(ERROR);
 }

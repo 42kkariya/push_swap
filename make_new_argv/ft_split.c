@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:17:57 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 22:13:11 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/19 13:27:12 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**ft_split(char *str, int *wordcount)
 {
 	char	**split;
 	int		i;
-	int		j;	
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -56,7 +56,7 @@ char	*ft_cpy(char *split, char *src)
 void	ft_free_split(char *str, char **split, int j)
 {
 	free(str);
-	while(--j >= 0)
+	while (--j >= 0)
 		free(split[j]);
 	free(split);
 	ft_printf("Error");
