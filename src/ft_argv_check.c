@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:02:36 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:15:29 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 21:46:35 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	ft_argv_check(int argc, char **argv, t_list **cy_list)
 	int		*map;
 	int		j;
 
-	map = malloc(sizeof(int) * (argc - 1));
+	map = malloc(sizeof(int) * argc);
 	if (!map)
 	{
 		ft_printf("%s", "Error");
 		exit (ERROR);
 	}
-	i = 1;
+	i = 0;
 	j = 0;
 	while (i < argc)
 	{

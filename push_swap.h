@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:23:21 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/16 22:17:44 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,26 @@ void	ft_exit(int error, t_list *cy_list);
 
 # include <stdarg.h>
 
-int    ft_printf(const char *format, ...);
-int    ft_print_char(int c);
-int    ft_print_str(char *s);
-int    ft_print_nbr(int n);
-int    ft_print_unsigned(unsigned int n);
-int    ft_print_hex(unsigned int n, char spec);
-int    ft_print_ptr(void *ptr);
-int    ft_print_nbr_base(unsigned long n, char *base);
+int		ft_printf(const char *format, ...);
+int		ft_print_char(int c);
+int		ft_print_str(char *s);
+int		ft_print_nbr(int n);
+int		ft_print_unsigned(unsigned int n);
+int		ft_print_hex(unsigned int n, char spec);
+int		ft_print_ptr(void *ptr);
+int		ft_print_nbr_base(unsigned long n, char *base);
+
+// make_new_argv
+
+char	**make_new_argv(int argc, char **argv, int *wordcount);
+char	**ft_split(char *str, int *wordcount);
+char	*ft_one_line(int argc, char **argv);
+char	*ft_strjoin_free(char *dest, char *src);
+int		ft_strlen(char *str);
+void	ft_argv_exit(char *str);
+char	*ft_cpy(char *split, char *src);
+void	ft_free_split(char *str, char **split, int j);
+int		ft_wordlen(char *str);
+int		ft_word_count(char *str, int *wordcount);
 
 #endif
