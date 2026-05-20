@@ -21,3 +21,18 @@ void	zerofrag(t_frag *frag)
 	frag -> ben = 0;
 	frag -> check = 0;
 }
+
+void	zerocount(t_counts *counts)
+{
+	counts->cnt_sa = 0;
+	counts->cnt_sb = 0;
+	counts->cnt_ss = 0;
+	counts->cnt_pa = 0;
+	counts->cnt_pb = 0;
+	counts->cnt_ra = 0;
+	counts->cnt_rb = 0;
+	counts->cnt_rr = 0;
+	counts->cnt_rra = 0;
+	counts->cnt_rrb = 0;
+	counts->cnt_rrr = 0;
+}

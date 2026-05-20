@@ -19,21 +19,24 @@ static void	rotate(t_list **stack)
 	*stack = (*stack)->next;
 }
 
-void	ra(t_list **stack_a)
+void	ra(t_list **stack_a, t_counts *counts)
 {
 	rotate(stack_a);
+	counts->cnt_ra++;
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_list **stack_b)
+void	rb(t_list **stack_b, t_counts *counts)
 {
 	rotate(stack_b);
+	counts->cnt_rb++;
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
 	rotate(stack_a);
 	rotate(stack_b);
+	counts->cnt_rr++;
 	write(1, "rr\n", 3);
 }

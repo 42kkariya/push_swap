@@ -23,21 +23,24 @@ static void	swap(t_list **stack)
 	(*stack)->next->nbr = tmp;
 }
 
-void	sa(t_list **stack_a)
+void	sa(t_list **stack_a, t_counts *counts)
 {
 	swap(stack_a);
+	counts->cnt_sa++;
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_list **stack_b)
+void	sb(t_list **stack_b, t_counts *counts)
 {
 	swap(stack_b);
+	counts->cnt_sb++;
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
 	swap(stack_a);
 	swap(stack_b);
+	counts->cnt_ss++;
 	write(1, "ss\n", 3);
 }

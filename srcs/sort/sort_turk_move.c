@@ -30,13 +30,13 @@ int	stack_size(t_list *stack)
 	return (get_rank(stack, stack->prev) + 1);
 }
 
-static void	rotate_shared(t_list **sa, t_list **sb, int *ra_n, int *rb_n)
+static void	rotate_shared(t_stacks *st, int *ra_n, int *rb_n)
 {
 	int	sz;
 	int	shared;
 
-	sz = stack_size(*sa);
-	if (*ra_n * 2 <= sz && *rb_n * 2 <= stack_size(*sb))
+	sz = stack_size(*st->a);
+	if (*ra_n * 2 <= sz && *rb_n * 2 <= stack_size(*st->b))
 	{
 		shared = *ra_n;
 		if (*rb_n < shared)
@@ -44,48 +44,48 @@ static void	rotate_shared(t_list **sa, t_list **sb, int *ra_n, int *rb_n)
 		*ra_n -= shared;
 		*rb_n -= shared;
 		while (shared-- > 0)
-			rr(sa, sb);
+			rr(st->a, st->b, st->cnt);
 	}
-	else if (*ra_n * 2 > sz && *rb_n * 2 > stack_size(*sb))
+	else if (*ra_n * 2 > sz && *rb_n * 2 > stack_size(*st->b))
 	{
 		shared = sz - *ra_n;
-		if (stack_size(*sb) - *rb_n < shared)
-			shared = stack_size(*sb) - *rb_n;
+		if (stack_size(*st->b) - *rb_n < shared)
+			shared = stack_size(*st->b) - *rb_n;
 		*ra_n += shared;
 		*rb_n += shared;
 		while (shared-- > 0)
-			rrr(sa, sb);
+			rrr(st->a, st->b, st->cnt);
 	}
 }
 
-static void	do_rotate(t_list **sa, t_list **sb, t_list *best, t_list *target)
+static void	do_rotate(t_stacks *st, t_list *best, t_list *target)
 {
 	int	rank_a;
 	int	rank_b;
 	int	sz_a;
 	int	sz_b;
 
-	rank_a = get_rank(*sa, target);
-	rank_b = get_rank(*sb, best);
-	sz_a = stack_size(*sa);
-	sz_b = stack_size(*sb);
-	rotate_shared(sa, sb, &rank_a, &rank_b);
+	rank_a = get_rank(*st->a, target);
+	rank_b = get_rank(*st->b, best);
+	sz_a = stack_size(*st->a);
+	sz_b = stack_size(*st->b);
+	rotate_shared(st, &rank_a, &rank_b);
 	if (rank_a * 2 <= sz_a)
 		while (rank_a-- > 0)
-			ra(sa);
+			ra(st->a, st->cnt);
 	else
 		while (sz_a-- > rank_a)
-			rra(sa);
+			rra(st->a, st->cnt);
 	if (rank_b * 2 <= sz_b)
 		while (rank_b-- > 0)
-			rb(sb);
+			rb(st->b, st->cnt);
 	else
 		while (sz_b-- > rank_b)
-			rrb(sb);
+			rrb(st->b, st->cnt);
 }
 
-void	do_move(t_list **sa, t_list **sb, t_list *best, t_list *target)
+void	do_move(t_stacks *st, t_list *best, t_list *target)
 {
-	do_rotate(sa, sb, best, target);
-	pa(sa, sb);
+	do_rotate(st, best, target);
+	pa(st->a, st->b, st->cnt);
 }

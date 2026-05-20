@@ -12,20 +12,20 @@
 
 #include "../../includes/push_swap.h"
 
-int	ft_print_str(char *s)
+int	ft_print_str(char *s, int fd)
 {
 	int	i;
 
 	if (s == NULL)
 	{
-		if (write(1, "(null)", 6) == -1)
+		if (write(fd, "(null)", 6) == -1)
 			return (-1);
 		return (6);
 	}
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (write(1, &s[i], 1) == -1)
+		if (write(fd, &s[i], 1) == -1)
 			return (-1);
 		i++;
 	}
