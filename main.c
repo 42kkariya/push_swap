@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/18 17:19:56 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 08:20:20 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 	t_list		*stack_b;
 	t_frag		frag;
 	t_counts	counts;
+	double		disorder;
 
 	cy_list = NULL;
 	zerofrag(&frag);
@@ -27,6 +28,9 @@ int	main(int argc, char **argv)
 	if (frag.check == 0)
 		frag.ada = 1;
 	stack_b = NULL;
+	disorder = calc_disorder(cy_list);
 	sort_dispatch(&cy_list, &stack_b, &frag, &counts);
+	if (frag.ben)
+		print_bench(&frag, &counts, disorder);
 	return (0);
 }
