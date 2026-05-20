@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listnew.c                                       :+:      :+:    :+:   */
+/*   list_add_back.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 13:14:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:15:27 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/13 18:37:12 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 13:15:29 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-t_list	*ft_listnew(int nb, t_list **cy_list)
+void	ft_list_add_back(t_list **cy_list, t_list	*new)
 {
-	t_list	*newnode;
+	t_list	*last;
 
-	newnode = malloc(sizeof(t_list));
-	if (!newnode)
-		ft_exit(ERROR, *cy_list);
-	newnode -> nbr = nb;
-	newnode -> next = NULL;
-	newnode -> prev = NULL;
-	return (newnode);
+	if (*cy_list == NULL)
+		*cy_list = new;
+	else
+	{
+		last = ft_listlast(*cy_list);
+		last -> next = new;
+		new -> prev = last;
+	}
 }
