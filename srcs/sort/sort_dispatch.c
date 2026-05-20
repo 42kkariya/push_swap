@@ -82,14 +82,14 @@ static void	adaptive_sort(t_list **stack_a, t_list **stack_b, t_counts *counts)
 		sort_radix(stack_a, stack_b, counts);
 }
 
-void	sort_dispatch(t_list **sa, t_list **sb, t_frag *frag, t_counts *cnt)
+void	sort_dispatch(t_list **s_a, t_list **s_b, t_frag *frag, t_counts *cnt)
 {
 	if (frag->sim)
-		sort_simple(sa, sb, cnt);
+		sort_simple(s_a, s_b, cnt);
 	else if (frag->med)
-		sort_turk(sa, sb, cnt);
+		sort_turk(s_a, s_b, cnt);
 	else if (frag->com)
-		sort_radix(sa, sb, cnt);
+		sort_radix(s_a, s_b, cnt);
 	else
-		adaptive_sort(sa, sb, cnt);
+		adaptive_sort(s_a, s_b, cnt);
 }

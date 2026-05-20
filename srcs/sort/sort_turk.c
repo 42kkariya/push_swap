@@ -123,6 +123,8 @@ void	sort_turk(t_list **stack_a, t_list **stack_b, t_counts *counts)
 	t_list		*target;
 	t_stacks	st;
 
+	if (stack_size(*stack_a) <= 1)
+		return ;
 	st.a = stack_a;
 	st.b = stack_b;
 	st.cnt = counts;
