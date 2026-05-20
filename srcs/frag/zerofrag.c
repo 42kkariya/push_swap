@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	zerofrag(t_frag *frag)
 {
-	frag -> sim = 0;
-	frag -> med = 0;
-	frag -> com = 0;
-	frag -> ada = 0;
-	frag -> ben = 0;
-	frag -> check = 0;
+	frag->sim = 0;
+	frag->med = 0;
+	frag->com = 0;
+	frag->ada = 0;
+	frag->ben = 0;
+	frag->check = 0;
 }
 
 void	zerocount(t_counts *counts)

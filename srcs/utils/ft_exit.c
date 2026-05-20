@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listlast.c                                      :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 13:27:15 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 13:15:26 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/14 15:51:50 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/16 13:15:30 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-t_list	*ft_listlast(t_list *cy_list)
+void	ft_exit(int error, t_list *cy_list)
 {
-	while (cy_list -> next != NULL)
+	t_list	*p;
+
+	while (cy_list)
 	{
-		cy_list = cy_list -> next;
+		p = cy_list->next;
+		free (cy_list);
+		cy_list = p;
 	}
-	return (cy_list);
+	ft_printf(2, "%s", "Error\n");
+	exit (error);
 }

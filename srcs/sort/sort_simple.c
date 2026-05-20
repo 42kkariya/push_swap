@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-static t_list	*serch_min(t_list *stack)
+static t_list	*search_min(t_list *stack)
 {
 	t_list	*result;
 	t_list	*first;
@@ -34,7 +34,7 @@ static void	rotate_list(t_list **stack, t_counts *counts)
 {
 	t_list	*min_value;
 
-	min_value = serch_min(*stack);
+	min_value = search_min(*stack);
 	while ((*stack)->nbr != min_value->nbr)
 	{
 		ra(stack, counts);

@@ -16,31 +16,31 @@ CFLAGS = -Wall -Wextra -Werror -I.
 RM = rm -fr
 
 SRCS =	main.c\
-		frag/ft_check_frag.c\
-		frag/zerofrag.c\
-		frag/bench.c\
-		list/ft_join_list.c\
-		list/ft_listlast.c\
-		list/ft_listnew.c\
-		list/ft_make_cy_list.c\
-		list/list_add_back.c\
-		src/ft_argv_check.c\
-		src/ft_atoi.c\
-		src/ft_exit.c\
-		srcs/printf/ft_printf.c \
-		srcs/printf/ft_print_char.c \
-		srcs/printf/ft_print_str.c \
-		srcs/printf/ft_print_nbr_base.c \
-		srcs/printf/ft_print_numbers.c \
-		srcs/sort/sort_simple.c \
-		srcs/sort/sort_radix.c \
-		srcs/sort/sort_turk.c \
-		srcs/sort/sort_turk_move.c \
-		srcs/sort/sort_dispatch.c \
-		srcs/oparations/op_push.c \
-		srcs/oparations/op_swap.c \
-		srcs/oparations/op_rotate.c \
-		srcs/oparations/op_reverse_rotate.c
+		srcs/frag/ft_check_frag.c\
+		srcs/frag/zerofrag.c\
+		srcs/frag/bench.c\
+		srcs/list/ft_join_list.c\
+		srcs/list/ft_listlast.c\
+		srcs/list/ft_listnew.c\
+		srcs/list/ft_make_cy_list.c\
+		srcs/list/list_add_back.c\
+		srcs/utils/ft_argv_check.c\
+		srcs/utils/ft_atoi.c\
+		srcs/utils/ft_exit.c\
+		srcs/printf/ft_printf.c\
+		srcs/printf/ft_print_char.c\
+		srcs/printf/ft_print_str.c\
+		srcs/printf/ft_print_nbr_base.c\
+		srcs/printf/ft_print_numbers.c\
+		srcs/sort/sort_simple.c\
+		srcs/sort/sort_radix.c\
+		srcs/sort/sort_turk.c\
+		srcs/sort/sort_turk_move.c\
+		srcs/sort/sort_dispatch.c\
+		srcs/operations/op_push.c\
+		srcs/operations/op_swap.c\
+		srcs/operations/op_rotate.c\
+		srcs/operations/op_reverse_rotate.c
 
 OBJS = $(SRCS:.c=.o)
 
