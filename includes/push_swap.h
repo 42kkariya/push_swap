@@ -89,6 +89,8 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	sort_simple(t_list **stack_a, t_list **stack_b);
 void	sort_radix(t_list **stack_a, t_list **stack_b);
 void	sort_turk(t_list **stack_a, t_list **stack_b);
+void	sort_dispatch(t_list **stack_a, t_list **stack_b, t_frag *frag);
+double	calc_disorder(t_list *stack);
 
 /* sort utils */
 int		stack_size(t_list *stack);
