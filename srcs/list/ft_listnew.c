@@ -19,8 +19,8 @@ t_list	*ft_listnew(int nb, t_list **cy_list)
 	newnode = malloc(sizeof(t_list));
 	if (!newnode)
 		ft_exit(ERROR, *cy_list);
-	newnode -> nbr = nb;
-	newnode -> next = NULL;
-	newnode -> prev = NULL;
+	newnode->nbr = nb;
+	newnode->next = NULL;
+	newnode->prev = NULL;
 	return (newnode);
 }

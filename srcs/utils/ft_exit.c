@@ -18,7 +18,7 @@ void	ft_exit(int error, t_list *cy_list)
 
 	while (cy_list)
 	{
-		p = cy_list -> next;
+		p = cy_list->next;
 		free (cy_list);
 		cy_list = p;
 	}

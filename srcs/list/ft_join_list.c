@@ -17,6 +17,6 @@ void	ft_join_list(t_list **cy_list)
 	t_list	*last;
 
 	last = ft_listlast(*cy_list);
-	last -> next = *cy_list;
+	last->next = *cy_list;
 	(*cy_list)->prev = last;
 }

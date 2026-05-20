@@ -14,9 +14,9 @@
 
 t_list	*ft_listlast(t_list *cy_list)
 {
-	while (cy_list -> next != NULL)
+	while (cy_list->next != NULL)
 	{
-		cy_list = cy_list -> next;
+		cy_list = cy_list->next;
 	}
 	return (cy_list);
 }

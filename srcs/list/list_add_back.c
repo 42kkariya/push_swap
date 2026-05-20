@@ -21,7 +21,7 @@ void	ft_list_add_back(t_list **cy_list, t_list	*new)
 	else
 	{
 		last = ft_listlast(*cy_list);
-		last -> next = new;
-		new -> prev = last;
+		last->next = new;
+		new->prev = last;
 	}
 }
