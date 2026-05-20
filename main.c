@@ -25,6 +25,21 @@ int	main(int argc, char **argv)
 	if (frag.check == 0)
 		frag.ada = 1;
 	stack_b = NULL;
-	sort_turk(&cy_list, &stack_b);
+	sort_dispatch(&cy_list, &stack_b, &frag);
 	return (0);
 }
+
+// python3 -c "
+// import subprocess, random
+
+// def test(n, t=20):
+// 	ops = []
+// 	for _ in range(t):
+// 		nums = random.sample(range(-10000,10000), n)
+// 		r = subprocess.run(['./push_swap', '--medium']+list(map(str,nums)), capture_output=True, text=True)
+// 		ops.append(len(r.stdout.strip().splitlines()))
+// 	print(f'n={n}: min={min(ops)}, max={max(ops)}, avg={sum(ops)/len(ops):.1f}')
+
+// test(100)
+// test(500)
+// "
