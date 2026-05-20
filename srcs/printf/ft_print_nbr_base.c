@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-int	ft_print_nbr_base(unsigned long n, char *base)
+int	ft_print_nbr_base(unsigned long n, char *base, int fd)
 {
 	char	c;
 	int		count;
@@ -24,12 +24,12 @@ int	ft_print_nbr_base(unsigned long n, char *base)
 	count = 0;
 	if (n >= (unsigned long)baselen)
 	{
-		count = ft_print_nbr_base(n / baselen, base);
+		count = ft_print_nbr_base(n / baselen, base, fd);
 		if (count == -1)
 			return (-1);
 	}
 	c = base[n % baselen];
-	if (write(1, &c, 1) == -1)
+	if (write(fd, &c, 1) == -1)
 		return (-1);
 	return (count + 1);
 }
