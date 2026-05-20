@@ -18,6 +18,7 @@ RM = rm -fr
 SRCS =	main.c\
 		frag/ft_check_frag.c\
 		frag/zerofrag.c\
+		frag/bench.c\
 		list/ft_join_list.c\
 		list/ft_listlast.c\
 		list/ft_listnew.c\
