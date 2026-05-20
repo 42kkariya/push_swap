@@ -107,7 +107,7 @@ static t_list	*best_node(t_list *stack_a, t_list *stack_b)
 //   最小値のランクを求める
 //   ランク <= size/2 → ra をランク回
 //   ランク > size/2  → rra を (size - ランク) 回
-static void	rotate_to_min(t_list **stack_a)
+static void	rotate_to_min(t_list **stack_a, t_counts *counts)
 {
 	t_list	*head;
 	t_list	*curr;
@@ -128,10 +128,10 @@ static void	rotate_to_min(t_list **stack_a)
 	sz = stack_size(*stack_a);
 	if (rank <= (sz / 2))
 		while (rank-- > 0)
-			ra(stack_a);
+			ra(stack_a, counts);
 	else
 		while (sz-- > rank)
-			rra(stack_a);
+			rra(stack_a, counts);
 }
 
 // turk_sort: メイン
@@ -141,19 +141,23 @@ static void	rotate_to_min(t_list **stack_a)
 //      b. find_target でその要素の挿入先を A から探す
 //      c. do_move で回転 + pa
 //   3. rotate_to_min で A の最小値を先頭に持ってくる
-void	sort_turk(t_list **stack_a, t_list **stack_b)
+void	sort_turk(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
-	t_list	*best;
-	t_list	*target;
+	t_list		*best;
+	t_list		*target;
+	t_stacks	st;
 
+	st.a = stack_a;
+	st.b = stack_b;
+	st.cnt = counts;
 	while (*stack_a)
-		pb(stack_a, stack_b);
-	pa(stack_a, stack_b);
+		pb(stack_a, stack_b, counts);
+	pa(stack_a, stack_b, counts);
 	while (*stack_b)
 	{
 		best = best_node(*stack_a, *stack_b);
 		target = find_target(*stack_a, best->nbr);
-		do_move(stack_a, stack_b, best, target);
+		do_move(&st, best, target);
 	}
-	rotate_to_min(stack_a);
+	rotate_to_min(stack_a, counts);
 }

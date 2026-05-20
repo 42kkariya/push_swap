@@ -30,31 +30,31 @@ static t_list	*serch_min(t_list *stack)
 	return (result);
 }
 
-static void	rotate_list(t_list **stack)
+static void	rotate_list(t_list **stack, t_counts *counts)
 {
 	t_list	*min_value;
 
 	min_value = serch_min(*stack);
 	while ((*stack)->nbr != min_value->nbr)
 	{
-		ra(stack);
+		ra(stack, counts);
 	}
 }
 
-static void	push_stack_b(t_list **stack_a, t_list **stack_b)
+static void	push_stack_b(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
 	while (*stack_a)
 	{
-		rotate_list(stack_a);
-		pb(stack_a, stack_b);
+		rotate_list(stack_a, counts);
+		pb(stack_a, stack_b, counts);
 	}
 	while (*stack_b)
 	{
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, counts);
 	}
 }
 
-void	sort_simple(t_list **stack_a, t_list **stack_b)
+void	sort_simple(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
-	push_stack_b(stack_a, stack_b);
+	push_stack_b(stack_a, stack_b, counts);
 }
