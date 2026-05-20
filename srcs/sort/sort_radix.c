@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <kkariya@student.42tokyo.jp>        +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 15:21:34 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 17:48:48 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/16 18:00:49 by kkariya           #+#    #+#             */
+/*   Updated: 2026/05/18 15:40:32 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-static int	stack_size(t_list *stack)
-{
-	t_list	*current;
-	int		i;
-
-	current = stack;
-	i = 0;
-	while (current->next != stack)
-	{
-		i++;
-		current = current->next;
-	}
-	return (i + 1);
-}
 
 static int	*bubble_sort(int *arr, int size)
 {

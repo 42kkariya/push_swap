@@ -33,6 +33,8 @@ SRCS =	main.c\
 		srcs/printf/ft_print_numbers.c \
 		srcs/sort/sort_simple.c \
 		srcs/sort/sort_radix.c \
+		srcs/sort/sort_turk.c \
+		srcs/sort/sort_turk_move.c \
 		srcs/oparations/op_push.c \
 		srcs/oparations/op_swap.c \
 		srcs/oparations/op_rotate.c \

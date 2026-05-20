@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <kkariya@student.42tokyo.jp>        +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 17:42:57 by marvin           ###   ########.fr       */
+/*   Updated: 2026/05/18 17:19:56 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_list	*cy_list;
 	t_list	*stack_b;
-	t_list	*current;
 	t_frag	frag;
 
 	cy_list = NULL;
@@ -26,13 +25,6 @@ int	main(int argc, char **argv)
 	if (frag.check == 0)
 		frag.ada = 1;
 	stack_b = NULL;
-	sort_radix(&cy_list, &stack_b);
-	current = cy_list;
-	while (current->next != cy_list)
-	{
-		ft_printf("%d, ", current->nbr);
-		current = current->next;
-	}
-	ft_printf("%d\n", current->nbr);
+	sort_turk(&cy_list, &stack_b);
 	return (0);
 }
