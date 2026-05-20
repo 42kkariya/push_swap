@@ -22,6 +22,6 @@ void	ft_exit(int error, t_list *cy_list)
 		free (cy_list);
 		cy_list = p;
 	}
-	ft_printf("%s", "Error");
+	ft_printf(2, "%s", "Error\n");
 	exit (error);
 }
