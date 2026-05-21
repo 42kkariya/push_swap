@@ -6,13 +6,13 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 18:00:49 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/18 15:40:32 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 15:59:58 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	*bubble_sort(int *arr, int size)
+int	*bubble_sort(int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -37,7 +37,7 @@ static int	*bubble_sort(int *arr, int size)
 	return (arr);
 }
 
-static void	assign_index(t_list *stack, int *arr, int size)
+void	assign_index(t_list *stack, int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,7 @@ static void	assign_index(t_list *stack, int *arr, int size)
 	}
 }
 
-static int	*to_index(t_list *stack, int size)
+int	*to_index(t_list *stack, int size)
 {
 	int		*arr;
 	int		i;

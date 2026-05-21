@@ -38,6 +38,7 @@ SRCS =	main.c\
 		srcs/sort/sort_radix.c\
 		srcs/sort/sort_turk.c\
 		srcs/sort/sort_turk_move.c\
+		srcs/sort/sort_chunk.c\
 		srcs/sort/sort_dispatch.c\
 		srcs/sort/sort_check.c\
 		srcs/operations/op_push.c\

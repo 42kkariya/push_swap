@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/21 12:06:12 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/21 17:05:37 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ void	rrr(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_simple(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_radix(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_turk(t_list **stack_a, t_list **stack_b, t_counts *counts);
+void	sort_chunk(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_dispatch(t_list **sa, t_frag *frag, t_counts *cnt);
 double	calc_disorder(t_list *stack);
 
@@ -122,6 +123,10 @@ int		stack_size(t_list *stack);
 int		get_rank(t_list *head, t_list *node);
 void	do_move(t_stacks *st, t_list *best, t_list *target);
 int		is_sorted(t_list *a);
+void	rotate_to_min(t_list **stack_a, t_counts *counts);
+int		*to_index(t_list *stack, int size);
+void	assign_index(t_list *stack, int *arr, int size);
+int		*bubble_sort(int *arr, int size);
 void	push_swap(t_list **s_a, t_frag frag);
 void	free_all(int new_argc, char **new_argv, t_list *cy_list);
 

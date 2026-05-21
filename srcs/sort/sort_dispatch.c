@@ -88,7 +88,7 @@ void	sort_dispatch(t_list **s_a, t_frag *frag, t_counts *cnt)
 	if (frag->sim)
 		sort_simple(s_a, &s_b, cnt);
 	else if (frag->med)
-		sort_turk(s_a, &s_b, cnt);
+		sort_chunk(s_a, &s_b, cnt);
 	else if (frag->com)
 		sort_radix(s_a, &s_b, cnt);
 	else

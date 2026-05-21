@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 18:00:59 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/18 17:15:01 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 17:05:20 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static t_list	*best_node(t_list *stack_a, t_list *stack_b)
 	return (result);
 }
 
-static void	rotate_to_min(t_list **stack_a, t_counts *counts)
+void	rotate_to_min(t_list **stack_a, t_counts *counts)
 {
 	t_list	*head;
 	t_list	*curr;
