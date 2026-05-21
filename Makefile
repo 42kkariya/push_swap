@@ -6,13 +6,13 @@
 #    By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/15 18:42:56 by mtaisei           #+#    #+#              #
-#    Updated: 2026/05/21 11:12:00 by mtaisei          ###   ########.fr        #
+#    Updated: 2026/05/21 12:13:03 by mtaisei          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS =-g -fsanitize=address -Wall -Wextra -Werror -I.
 RM = rm -fr
 
 SRCS =	main.c\
@@ -27,6 +27,8 @@ SRCS =	main.c\
 		srcs/utils/ft_argv_check.c\
 		srcs/utils/ft_atoi.c\
 		srcs/utils/ft_exit.c\
+		srcs/utils/free_all.c\
+		srcs/utils/push_swap.c\
 		srcs/printf/ft_printf.c\
 		srcs/printf/ft_print_char.c\
 		srcs/printf/ft_print_str.c\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_dispatch.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:10:09 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/20 18:10:09 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 11:48:06 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,16 @@ static void	adaptive_sort(t_list **stack_a, t_list **stack_b, t_counts *counts)
 		sort_turk(stack_a, stack_b, counts);
 }
 
-void	sort_dispatch(t_list **s_a, t_list **s_b, t_frag *frag, t_counts *cnt)
+void	sort_dispatch(t_list **s_a, t_frag *frag, t_counts *cnt)
 {
+	t_list	*s_b;
+	
 	if (frag->sim)
-		sort_simple(s_a, s_b, cnt);
+		sort_simple(s_a, &s_b, cnt);
 	else if (frag->med)
-		sort_turk(s_a, s_b, cnt);
+		sort_turk(s_a, &s_b, cnt);
 	else if (frag->com)
-		sort_radix(s_a, s_b, cnt);
+		sort_radix(s_a, &s_b, cnt);
 	else
-		adaptive_sort(s_a, s_b, cnt);
+		adaptive_sort(s_a, &s_b, cnt);
 }

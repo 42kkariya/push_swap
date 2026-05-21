@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/21 11:08:31 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/21 12:06:12 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	rrr(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_simple(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_radix(t_list **stack_a, t_list **stack_b, t_counts *counts);
 void	sort_turk(t_list **stack_a, t_list **stack_b, t_counts *counts);
-void	sort_dispatch(t_list **sa, t_list **sb, t_frag *frag, t_counts *cnt);
+void	sort_dispatch(t_list **sa, t_frag *frag, t_counts *cnt);
 double	calc_disorder(t_list *stack);
 
 /* sort utils */
@@ -122,6 +122,8 @@ int		stack_size(t_list *stack);
 int		get_rank(t_list *head, t_list *node);
 void	do_move(t_stacks *st, t_list *best, t_list *target);
 int		is_sorted(t_list *a);
+void	push_swap(t_list **s_a, t_frag frag);
+void	free_all(int new_argc, char **new_argv, t_list *cy_list);
 
 // make_new_argv
 

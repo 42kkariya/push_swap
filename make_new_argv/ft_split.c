@@ -6,11 +6,11 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:17:57 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/19 13:27:12 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/21 11:51:12 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 char	**ft_split(char *str, int *wordcount)
 {
@@ -59,7 +59,7 @@ void	ft_free_split(char *str, char **split, int j)
 	while (--j >= 0)
 		free(split[j]);
 	free(split);
-	ft_printf("Error");
+	ft_printf(2, "Error");
 	exit (ERROR);
 }
 

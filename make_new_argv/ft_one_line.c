@@ -6,11 +6,11 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:44:42 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 21:35:28 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/21 12:07:33 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 char	*ft_one_line(int argc, char **argv)
 {
@@ -40,7 +40,7 @@ char	*ft_strjoin_free(char *dest, char *src)
 	res = malloc(sizeof(char) * (s_len + d_len + 1));
 	if (!res)
 	{
-		ft_printf("%s", "Error");
+		ft_printf(2, "Error");
 		free(dest);
 		exit (ERROR);
 	}
