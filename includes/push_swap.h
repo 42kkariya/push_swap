@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/18 17:15:10 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 09:26:12 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,6 @@ double	calc_disorder(t_list *stack);
 int		stack_size(t_list *stack);
 int		get_rank(t_list *head, t_list *node);
 void	do_move(t_stacks *st, t_list *best, t_list *target);
+int		is_sorted(t_list *a);
 
 #endif

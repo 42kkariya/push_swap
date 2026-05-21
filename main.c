@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 16:26:03 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/21 08:20:20 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 09:28:07 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	if (frag.check == 0)
 		frag.ada = 1;
 	stack_b = NULL;
+	if (is_sorted(cy_list))
+		return (0);
 	disorder = calc_disorder(cy_list);
 	sort_dispatch(&cy_list, &stack_b, &frag, &counts);
 	if (frag.ben)

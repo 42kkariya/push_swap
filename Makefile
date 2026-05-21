@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+         #
+#    By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/15 18:42:56 by mtaisei           #+#    #+#              #
-#    Updated: 2026/05/16 13:25:20 by mtaisei          ###   ########.fr        #
+#    Updated: 2026/05/21 09:27:36 by kkariya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS =	main.c\
 		srcs/sort/sort_turk.c\
 		srcs/sort/sort_turk_move.c\
 		srcs/sort/sort_dispatch.c\
+		srcs/sort/sort_check.c\
 		srcs/operations/op_push.c\
 		srcs/operations/op_swap.c\
 		srcs/operations/op_rotate.c\
