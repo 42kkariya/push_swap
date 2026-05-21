@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_dispatch.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:10:09 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/21 11:48:06 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/21 12:33:13 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,10 @@ double	calc_disorder(t_list *stack)
 static void	adaptive_sort(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
 	double	disorder;
-	int		size;
 
-	size = stack_size(*stack_a);
 	disorder = calc_disorder(*stack_a);
 	if (disorder < 0.2)
 		sort_simple(stack_a, stack_b, counts);
-	else if (disorder >= 0.7 && size > 1000)
-		sort_radix(stack_a, stack_b, counts);
 	else
 		sort_turk(stack_a, stack_b, counts);
 }
@@ -87,7 +83,8 @@ static void	adaptive_sort(t_list **stack_a, t_list **stack_b, t_counts *counts)
 void	sort_dispatch(t_list **s_a, t_frag *frag, t_counts *cnt)
 {
 	t_list	*s_b;
-	
+
+	s_b = NULL;
 	if (frag->sim)
 		sort_simple(s_a, &s_b, cnt);
 	else if (frag->med)

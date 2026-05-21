@@ -15,7 +15,6 @@
 void	free_all(int new_argc, char **new_argv, t_list *cy_list)
 {
 	int		i;
-	t_list	*first;
 	t_list	*next;
 
 	i = 0;
@@ -25,11 +24,10 @@ void	free_all(int new_argc, char **new_argv, t_list *cy_list)
 		i++;
 	}
 	free(new_argv);
-	first = cy_list->prev;
-	next = cy_list->next;
-	free(cy_list);
-	cy_list = next;
-	while (cy_list != first)
+	if (!cy_list)
+		return ;
+	cy_list->prev->next = NULL;
+	while (cy_list)
 	{
 		next = cy_list->next;
 		free(cy_list);

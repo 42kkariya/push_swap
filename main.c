@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	new_argv = make_new_argv(argc, argv, &new_argc);
 	zerofrag(&frag);
 	ft_argv_check(new_argc, new_argv, &cy_list);
+	ft_make_cy_list(&cy_list, &frag, new_argc, new_argv);
 	push_swap(&cy_list, frag);
 	free_all(new_argc, new_argv, cy_list);
 	return (0);
