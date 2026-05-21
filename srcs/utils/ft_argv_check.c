@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_argv_check(int argc, char **argv, t_list **cy_list)
 {
@@ -21,7 +21,7 @@ void	ft_argv_check(int argc, char **argv, t_list **cy_list)
 	map = malloc(sizeof(int) * argc);
 	if (!map)
 	{
-		ft_printf("%s", "Error");
+		ft_printf(2, "%s", "Error\n");
 		exit (ERROR);
 	}
 	i = 0;
@@ -49,7 +49,7 @@ void	ft_nbrcheck(int *map, int j)
 	if (j == 0)
 	{
 		free(map);
-		ft_printf("%s", "Error");
+		ft_printf(2, "%s", "Error\n");
 		exit(ERROR);
 	}
 	while (i < j)
@@ -57,7 +57,7 @@ void	ft_nbrcheck(int *map, int j)
 		if (ft_check(map[i], &map[i + 1], j - (i + 1)))
 		{
 			free(map);
-			ft_printf("%s", "Error");
+			ft_printf(2, "%s", "Error\n");
 			exit(ERROR);
 		}
 		i++;

@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	ft_print_char(int c)
+int	ft_print_char(int c, int fd)
 {
 	char	ch;
 
 	ch = (char)c;
-	if (write(1, &ch, 1) == -1)
+	if (write(fd, &ch, 1) == -1)
 		return (-1);
 	return (1);
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	ft_print_nbr(int n)
+int	ft_print_nbr(int n, int fd)
 {
 	long	nb;
 	int		ret;
@@ -20,42 +20,61 @@ int	ft_print_nbr(int n)
 	nb = n;
 	if (nb < 0)
 	{
-		if (write(1, "-", 1) == -1)
+		if (write(fd, "-", 1) == -1)
 			return (-1);
-		ret = ft_print_nbr_base((unsigned long)(-nb), "0123456789");
+		ret = ft_print_nbr_base((unsigned long)(-nb), "0123456789", fd);
 		if (ret == -1)
 			return (-1);
 		return (1 + ret);
 	}
-	return (ft_print_nbr_base((unsigned long)nb, "0123456789"));
+	return (ft_print_nbr_base((unsigned long)nb, "0123456789", fd));
 }
 
-int	ft_print_unsigned(unsigned int n)
+int	ft_print_unsigned(unsigned int n, int fd)
 {
-	return (ft_print_nbr_base((unsigned long)n, "0123456789"));
+	return (ft_print_nbr_base((unsigned long)n, "0123456789", fd));
 }
 
-int	ft_print_hex(unsigned int n, char spec)
+int	ft_print_hex(unsigned int n, char spec, int fd)
 {
 	if (spec == 'x')
-		return (ft_print_nbr_base((unsigned long)n, "0123456789abcdef"));
-	return (ft_print_nbr_base((unsigned long)n, "0123456789ABCDEF"));
+		return (ft_print_nbr_base((unsigned long)n, "0123456789abcdef", fd));
+	return (ft_print_nbr_base((unsigned long)n, "0123456789ABCDEF", fd));
 }
 
-int	ft_print_ptr(void *ptr)
+int	ft_print_ptr(void *ptr, int fd)
 {
 	int	ret;
 
 	if (ptr == NULL)
 	{
-		if (write(1, "(nil)", 5) == -1)
+		if (write(fd, "(nil)", 5) == -1)
 			return (-1);
 		return (5);
 	}
-	if (write(1, "0x", 2) == -1)
+	if (write(fd, "0x", 2) == -1)
 		return (-1);
-	ret = ft_print_nbr_base((unsigned long)ptr, "0123456789abcdef");
+	ret = ft_print_nbr_base((unsigned long)ptr, "0123456789abcdef", fd);
 	if (ret == -1)
 		return (-1);
 	return (2 + ret);
+}
+
+int	ft_print_double(double n, int fd)
+{
+	int	integer;
+	int	decimal;
+	int	ret;
+
+	integer = (int)n;
+	decimal = (int)((n - integer) * 100);
+	ret = 0;
+	ret += ft_print_nbr(integer, fd);
+	if (write(fd, ".", 1) == -1)
+		return (-1);
+	ret++;
+	if (decimal < 10)
+		write(fd, "0", 1);
+	ret += ft_print_nbr(decimal, fd);
+	return (ret);
 }

@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_rotate.c                                        :+:      :+:    :+:   */
+/*   op_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 14:27:56 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/14 14:27:56 by kkariya          ###   ########.fr       */
+/*   Created: 2026/05/14 14:27:45 by kkariya           #+#    #+#             */
+/*   Updated: 2026/05/14 14:27:45 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	rotate(t_list **stack)
+static void	reverse_rotate(t_list **stack)
 {
 	if (!*stack || (*stack)->next == *stack)
 		return ;
-	*stack = (*stack)->next;
+	*stack = (*stack)->prev;
 }
 
-void	ra(t_list **stack_a)
+void	rra(t_list **stack_a, t_counts *counts)
 {
-	rotate(stack_a);
-	write(1, "ra\n", 3);
+	reverse_rotate(stack_a);
+	counts->cnt_rra++;
+	write(1, "rra\n", 4);
 }
 
-void	rb(t_list **stack_b)
+void	rrb(t_list **stack_b, t_counts *counts)
 {
-	rotate(stack_b);
-	write(1, "rb\n", 3);
+	reverse_rotate(stack_b);
+	counts->cnt_rrb++;
+	write(1, "rrb\n", 4);
 }
 
-void	rr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
-	rotate(stack_a);
-	rotate(stack_b);
-	write(1, "rr\n", 3);
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
+	counts->cnt_rrr++;
+	write(1, "rrr\n", 4);
 }

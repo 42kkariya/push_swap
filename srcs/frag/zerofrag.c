@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr_base.c                                :+:      :+:    :+:   */
+/*   zerofrag.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 17:39:17 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/16 13:21:03 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/14 15:05:58 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/15 14:02:10 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_print_nbr_base(unsigned long n, char *base, int fd)
+void	zerofrag(t_frag *frag)
 {
-	char	c;
-	int		count;
-	int		baselen;
+	frag->sim = 0;
+	frag->med = 0;
+	frag->com = 0;
+	frag->ada = 0;
+	frag->ben = 0;
+	frag->check = 0;
+}
 
-	baselen = 0;
-	while (base[baselen] != '\0')
-		baselen++;
-	count = 0;
-	if (n >= (unsigned long)baselen)
-	{
-		count = ft_print_nbr_base(n / baselen, base, fd);
-		if (count == -1)
-			return (-1);
-	}
-	c = base[n % baselen];
-	if (write(fd, &c, 1) == -1)
-		return (-1);
-	return (count + 1);
+void	zerocount(t_counts *counts)
+{
+	counts->cnt_sa = 0;
+	counts->cnt_sb = 0;
+	counts->cnt_ss = 0;
+	counts->cnt_pa = 0;
+	counts->cnt_pb = 0;
+	counts->cnt_ra = 0;
+	counts->cnt_rb = 0;
+	counts->cnt_rr = 0;
+	counts->cnt_rra = 0;
+	counts->cnt_rrb = 0;
+	counts->cnt_rrr = 0;
 }

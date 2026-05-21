@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_reverse_rotate.c                                :+:      :+:    :+:   */
+/*   sort_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 14:27:45 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/14 14:27:45 by kkariya          ###   ########.fr       */
+/*   Created: 2026/05/21 09:24:14 by kkariya           #+#    #+#             */
+/*   Updated: 2026/05/21 09:26:17 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	reverse_rotate(t_list **stack)
+int	is_sorted(t_list *a)
 {
-	if (!*stack || (*stack)->next == *stack)
-		return ;
-	*stack = (*stack)->prev;
-}
+	t_list	*head;
 
-void	rra(t_list **stack_a)
-{
-	reverse_rotate(stack_a);
-	write(1, "rra\n", 4);
-}
-
-void	rrb(t_list **stack_b)
-{
-	reverse_rotate(stack_b);
-	write(1, "rrb\n", 4);
-}
-
-void	rrr(t_list **stack_a, t_list **stack_b)
-{
-	reverse_rotate(stack_a);
-	reverse_rotate(stack_b);
-	write(1, "rrr\n", 4);
+	if (!a)
+		return (1);
+	head = a;
+	while (a->next != head)
+	{
+		if (a->nbr > a->next->nbr)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
