@@ -12,25 +12,11 @@
 
 #include "../../includes/push_swap.h"
 
-static void	push_chunk(t_stacks *st, int lo, int hi)
+static int	safe_stack_size(t_list *stack)
 {
-	int	size;
-	int	i;
-
-	size = stack_size(*st->a);
-	i = 0;
-	while (i < size)
-	{
-		if (((*st->a)->nbr) >= lo && ((*st->a)->nbr) <= hi)
-		{
-			pb(st->a, st->b, st->cnt);
-			if ((*st->b)->nbr >= (lo + hi) / 2)
-				rb(st->b, st->cnt);
-		}
-		else
-			ra(st->a, st->cnt);
-		i++;
-	}
+	if (!stack)
+		return (0);
+	return (stack_size(stack));
 }
 
 static void	pull_all(t_stacks *st)
@@ -81,21 +67,27 @@ static int	isqrt(int n)
 	return (lo);
 }
 
-static void	push_all_chunks(t_stacks *st, int size)
+static void	push_dynamic_window(t_stacks *st, int size)
 {
-	int	chunk;
-	int	lo;
-	int	hi;
+	int	window;
+	int	pushed;
 
-	chunk = isqrt(size) * 3;
-	lo = 0;
-	while (lo < size)
+	window = isqrt(size) * 3 / 2;
+	if (window < 2)
+		window = 2;
+	while (*st->a)
 	{
-		hi = lo + chunk - 1;
-		if (hi >= size)
-			hi = size - 1;
-		push_chunk(st, lo, hi);
-		lo += chunk;
+		pushed = safe_stack_size(*st->b);
+		if ((*st->a)->nbr <= pushed)
+		{
+			pb(st->a, st->b, st->cnt);
+			if ((*st->b)->next != *st->b)
+				rb(st->b, st->cnt);
+		}
+		else if ((*st->a)->nbr <= pushed + window)
+			pb(st->a, st->b, st->cnt);
+		else
+			ra(st->a, st->cnt);
 	}
 }
 
@@ -113,7 +105,7 @@ void	sort_chunk(t_list **stack_a, t_list **stack_b, t_counts *counts)
 	st.a = stack_a;
 	st.b = stack_b;
 	st.cnt = counts;
-	push_all_chunks(&st, size);
+	push_dynamic_window(&st, size);
 	pull_all(&st);
 	rotate_to_min(stack_a, counts);
 }
