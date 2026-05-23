@@ -122,15 +122,16 @@ void	sort_turk(t_list **stack_a, t_list **stack_b, t_counts *counts)
 	t_list		*best;
 	t_list		*target;
 	t_stacks	st;
+	int			size;
 
-	if (stack_size(*stack_a) <= 1)
+	size = stack_size(*stack_a);
+	if (!turk_prepare(stack_a, counts, size))
 		return ;
 	st.a = stack_a;
 	st.b = stack_b;
 	st.cnt = counts;
-	while (*stack_a)
-		pb(stack_a, stack_b, counts);
-	pa(stack_a, stack_b, counts);
+	turk_push_to_b(&st, size);
+	turk_sort_three(stack_a, counts);
 	while (*stack_b)
 	{
 		best = best_node(*stack_a, *stack_b);

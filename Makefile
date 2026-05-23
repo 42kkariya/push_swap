@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+         #
+#    By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/15 18:42:56 by mtaisei           #+#    #+#              #
-#    Updated: 2026/05/21 12:13:03 by mtaisei          ###   ########.fr        #
+#    Updated: 2026/05/23 15:07:49 by kkariya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS =-g -fsanitize=address -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -I.
 RM = rm -fr
 
 SRCS =	main.c\
@@ -38,6 +38,7 @@ SRCS =	main.c\
 		srcs/sort/sort_radix.c\
 		srcs/sort/sort_turk.c\
 		srcs/sort/sort_turk_move.c\
+		srcs/sort/sort_turk_utils.c\
 		srcs/sort/sort_chunk.c\
 		srcs/sort/sort_dispatch.c\
 		srcs/sort/sort_check.c\
