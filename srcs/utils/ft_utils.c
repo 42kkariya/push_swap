@@ -58,10 +58,9 @@ void	push_swap(t_list **s_a, t_frag frag)
 	zerocount(&counts);
 	if (frag.check == 0)
 		frag.ada = 1;
-	if (is_sorted(*s_a))
-		return ;
 	disorder = calc_disorder(*s_a);
-	sort_dispatch(s_a, &frag, &counts);
+	if (!is_sorted(*s_a))
+		sort_dispatch(s_a, &frag, &counts);
 	if (frag.ben)
 		print_bench(&frag, &counts, disorder);
 	return ;

@@ -80,15 +80,12 @@ int	*to_index(t_list *stack, int size)
 	return (arr);
 }
 
-void	sort_radix(t_list **stack_a, t_list **stack_b, t_counts *counts)
+static void	radix_indexed(t_list **stack_a, t_list **stack_b,
+		t_counts *counts, int size)
 {
 	int	i;
 	int	bit;
-	int	size;
-	int	*arr;
 
-	size = stack_size(*stack_a);
-	arr = to_index(*stack_a, size);
 	bit = 0;
 	while ((size - 1) >> bit)
 	{
@@ -105,5 +102,17 @@ void	sort_radix(t_list **stack_a, t_list **stack_b, t_counts *counts)
 			pa(stack_a, stack_b, counts);
 		bit++;
 	}
+}
+
+void	sort_radix(t_list **stack_a, t_list **stack_b, t_counts *counts)
+{
+	int	size;
+	int	*arr;
+
+	size = stack_size(*stack_a);
+	arr = to_index(*stack_a, size);
+	if (!arr)
+		return ;
+	radix_indexed(stack_a, stack_b, counts, size);
 	free(arr);
 }

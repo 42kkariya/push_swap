@@ -97,6 +97,8 @@ int	ft_atoi(char *nb, t_list **cy_list)
 	}
 	while (nb[i] >= '0' && nb[i] <= '9')
 	{
+		if (res > (long)INT_MAX / 10)
+			ft_exit(ERROR, *cy_list);
 		res = res * 10 + (nb[i] - '0');
 		i++;
 	}

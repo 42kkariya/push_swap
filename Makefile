@@ -35,8 +35,8 @@ SRCS =	main.c\
 		srcs/operations/op_swap.c\
 		srcs/operations/op_rotate.c\
 		srcs/operations/op_reverse_rotate.c\
-		make_new_argv/make_new_argv.c\
-		make_new_argv/ft_split.c
+		srcs/argv/make_new_argv.c\
+		srcs/argv/ft_split.c
 
 OBJS = $(SRCS:.c=.o)
 
