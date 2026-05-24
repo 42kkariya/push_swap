@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_one_line.c                                      :+:      :+:    :+:   */
+/*   make_new_argv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 15:44:42 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/21 12:07:33 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/16 21:57:10 by mtaisei           #+#    #+#             */
+/*   Updated: 2026/05/24 00:00:00 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
+
+void	ft_argv_exit(char *str)
+{
+	free(str);
+	ft_printf(2, "Error\n");
+	exit(ERROR);
+}
 
 char	*ft_one_line(int argc, char **argv)
 {
@@ -40,7 +47,7 @@ char	*ft_strjoin_free(char *dest, char *src)
 	res = malloc(sizeof(char) * (s_len + d_len + 1));
 	if (!res)
 	{
-		ft_printf(2, "Error");
+		ft_printf(2, "Error\n");
 		free(dest);
 		exit (ERROR);
 	}
@@ -65,4 +72,19 @@ int	ft_strlen(char *str)
 	while (str[len])
 		len++;
 	return (len);
+}
+
+char	**make_new_argv(int argc, char **argv, int *wordcount)
+{
+	char	*str;
+	char	**split;
+
+	*wordcount = 0;
+	str = ft_one_line(argc, argv);
+	*wordcount = ft_word_count(str, wordcount);
+	if (*wordcount == 0)
+		ft_argv_exit(str);
+	split = ft_split(str, wordcount);
+	free (str);
+	return (split);
 }

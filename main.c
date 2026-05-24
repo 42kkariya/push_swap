@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 	char	**new_argv;
 	int		new_argc;
 
+	if (argc == 1)
+		return (0);
 	cy_list = NULL;
 	new_argv = make_new_argv(argc, argv, &new_argc);
 	zerofrag(&frag);

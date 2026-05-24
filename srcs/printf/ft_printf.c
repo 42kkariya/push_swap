@@ -12,6 +12,36 @@
 
 #include "../../includes/push_swap.h"
 
+int	ft_print_char(int c, int fd)
+{
+	char	ch;
+
+	ch = (char)c;
+	if (write(fd, &ch, 1) == -1)
+		return (-1);
+	return (1);
+}
+
+int	ft_print_str(char *s, int fd)
+{
+	int	i;
+
+	if (s == NULL)
+	{
+		if (write(fd, "(null)", 6) == -1)
+			return (-1);
+		return (6);
+	}
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (write(fd, &s[i], 1) == -1)
+			return (-1);
+		i++;
+	}
+	return (i);
+}
+
 static int	check_format_print(char c, va_list *a, int fd)
 {
 	if (c == 'c')

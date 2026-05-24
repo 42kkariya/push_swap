@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all.c                                         :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 11:52:42 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/21 12:18:18 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/24 00:00:00 by kkariya           #+#    #+#             */
+/*   Updated: 2026/05/24 00:00:00 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	ft_exit(int error, t_list *cy_list)
+{
+	t_list	*p;
+
+	while (cy_list)
+	{
+		p = cy_list->next;
+		free (cy_list);
+		cy_list = p;
+	}
+	ft_printf(2, "%s", "Error\n");
+	exit (error);
+}
 
 void	free_all(int new_argc, char **new_argv, t_list *cy_list)
 {
@@ -33,5 +47,21 @@ void	free_all(int new_argc, char **new_argv, t_list *cy_list)
 		free(cy_list);
 		cy_list = next;
 	}
+	return ;
+}
+
+void	push_swap(t_list **s_a, t_frag frag)
+{
+	t_counts	counts;
+	double		disorder;
+
+	zerocount(&counts);
+	if (frag.check == 0)
+		frag.ada = 1;
+	disorder = calc_disorder(*s_a);
+	if (!is_sorted(*s_a))
+		sort_dispatch(s_a, &frag, &counts);
+	if (frag.ben)
+		print_bench(&frag, &counts, disorder);
 	return ;
 }

@@ -76,6 +76,8 @@ static void	adaptive_sort(t_list **stack_a, t_list **stack_b, t_counts *counts)
 	disorder = calc_disorder(*stack_a);
 	if (disorder < 0.2)
 		sort_simple(stack_a, stack_b, counts);
+	else if (disorder < 0.5)
+		sort_chunk(stack_a, stack_b, counts);
 	else
 		sort_turk(stack_a, stack_b, counts);
 }
@@ -88,7 +90,7 @@ void	sort_dispatch(t_list **s_a, t_frag *frag, t_counts *cnt)
 	if (frag->sim)
 		sort_simple(s_a, &s_b, cnt);
 	else if (frag->med)
-		sort_turk(s_a, &s_b, cnt);
+		sort_chunk(s_a, &s_b, cnt);
 	else if (frag->com)
 		sort_radix(s_a, &s_b, cnt);
 	else

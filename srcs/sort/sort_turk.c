@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 18:00:59 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/18 17:15:01 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/21 17:05:20 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static t_list	*best_node(t_list *stack_a, t_list *stack_b)
 	return (result);
 }
 
-static void	rotate_to_min(t_list **stack_a, t_counts *counts)
+void	rotate_to_min(t_list **stack_a, t_counts *counts)
 {
 	t_list	*head;
 	t_list	*curr;
@@ -122,15 +122,16 @@ void	sort_turk(t_list **stack_a, t_list **stack_b, t_counts *counts)
 	t_list		*best;
 	t_list		*target;
 	t_stacks	st;
+	int			size;
 
-	if (stack_size(*stack_a) <= 1)
+	size = stack_size(*stack_a);
+	if (!turk_prepare(stack_a, counts, size))
 		return ;
 	st.a = stack_a;
 	st.b = stack_b;
 	st.cnt = counts;
-	while (*stack_a)
-		pb(stack_a, stack_b, counts);
-	pa(stack_a, stack_b, counts);
+	turk_push_to_b(&st, size);
+	turk_sort_three(stack_a, counts);
 	while (*stack_b)
 	{
 		best = best_node(*stack_a, *stack_b);

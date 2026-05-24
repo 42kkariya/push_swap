@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 char	**ft_split(char *str, int *wordcount)
 {
@@ -59,7 +59,7 @@ void	ft_free_split(char *str, char **split, int j)
 	while (--j >= 0)
 		free(split[j]);
 	free(split);
-	ft_printf(2, "Error");
+	ft_printf(2, "Error\n");
 	exit (ERROR);
 }
 
