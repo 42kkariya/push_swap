@@ -1,16 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_frag.c                                    :+:      :+:    :+:   */
+/*   ft_frag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 13:38:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/16 14:00:31 by mtaisei          ###   ########.fr       */
+/*   Created: 2026/05/24 00:00:00 by kkariya           #+#    #+#             */
+/*   Updated: 2026/05/24 00:00:00 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	zerofrag(t_frag *frag)
+{
+	frag->sim = 0;
+	frag->med = 0;
+	frag->com = 0;
+	frag->ada = 0;
+	frag->ben = 0;
+	frag->check = 0;
+}
+
+void	zerocount(t_counts *counts)
+{
+	counts->cnt_sa = 0;
+	counts->cnt_sb = 0;
+	counts->cnt_ss = 0;
+	counts->cnt_pa = 0;
+	counts->cnt_pb = 0;
+	counts->cnt_ra = 0;
+	counts->cnt_rb = 0;
+	counts->cnt_rr = 0;
+	counts->cnt_rra = 0;
+	counts->cnt_rrb = 0;
+	counts->cnt_rrr = 0;
+}
+
+int	ft_strcmp(char *dest, char *src)
+{
+	size_t	i;
+
+	i = 0;
+	while (dest[i] && src[i] && dest[i] == src[i])
+		i++;
+	return ((unsigned char)dest[i] - (unsigned char)src[i]);
+}
+
+void	ft_frag_nbr_check(t_frag *frag, t_list **cy_list)
+{
+	if (frag->check >= 2)
+		ft_exit(ERROR, *cy_list);
+	else if (frag->ben >= 2)
+		ft_exit(ERROR, *cy_list);
+	return ;
+}
 
 void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list)
 {
@@ -39,23 +83,4 @@ void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list)
 	else
 		ft_exit(ERROR, *cy_list);
 	ft_frag_nbr_check(frag, cy_list);
-}
-
-int	ft_strcmp(char *dest, char *src)
-{
-	size_t	i;
-
-	i = 0;
-	while (dest[i] && src[i] && dest[i] == src[i])
-		i++;
-	return ((unsigned char)dest[i] - (unsigned char)src[i]);
-}
-
-void	ft_frag_nbr_check(t_frag *frag, t_list **cy_list)
-{
-	if (frag->check >= 2)
-		ft_exit(ERROR, *cy_list);
-	else if (frag->ben >= 2)
-		ft_exit(ERROR, *cy_list);
-	return ;
 }

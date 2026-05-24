@@ -12,6 +12,22 @@
 
 #include "../../includes/push_swap.h"
 
+int	is_sorted(t_list *a)
+{
+	t_list	*head;
+
+	if (!a)
+		return (1);
+	head = a;
+	while (a->next != head)
+	{
+		if (a->nbr > a->next->nbr)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
+
 void	turk_sort_three(t_list **stack_a, t_counts *counts)
 {
 	int	first;
