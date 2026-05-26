@@ -73,8 +73,6 @@ void	ft_make_cy_list(t_list	**cy_list, t_frag *frag, int argc, char **argv)
 			nb = ft_atoi(argv[i], cy_list);
 			ft_list_add_back(cy_list, ft_listnew(nb, cy_list));
 		}
-		else
-			ft_exit(ERROR, *cy_list);
 		i++;
 	}
 	ft_join_list(cy_list);

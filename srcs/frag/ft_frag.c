@@ -47,17 +47,9 @@ int	ft_strcmp(char *dest, char *src)
 	return ((unsigned char)dest[i] - (unsigned char)src[i]);
 }
 
-void	ft_frag_nbr_check(t_frag *frag, t_list **cy_list)
-{
-	if (frag->check >= 2)
-		ft_exit(ERROR, *cy_list);
-	else if (frag->ben >= 2)
-		ft_exit(ERROR, *cy_list);
-	return ;
-}
-
 void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list)
 {
+	(void)cy_list;
 	if (!ft_strcmp(argv, "simple"))
 	{
 		frag->sim++;
@@ -80,7 +72,4 @@ void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list)
 	}
 	else if (!ft_strcmp(argv, "bench"))
 		frag->ben++;
-	else
-		ft_exit(ERROR, *cy_list);
-	ft_frag_nbr_check(frag, cy_list);
 }

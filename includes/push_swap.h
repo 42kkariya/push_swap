@@ -64,7 +64,6 @@ typedef struct s_stacks
 
 void	ft_check_frag(char *argv, t_frag *frag, t_list **cy_list);
 int		ft_strcmp(char *dest, char *src);
-void	ft_frag_nbr_check(t_frag *frag, t_list **cy_list);
 void	zerofrag(t_frag *frag);
 void	zerocount(t_counts *counts);
 void	print_bench(t_frag *frag, t_counts *counts, double disorder);
