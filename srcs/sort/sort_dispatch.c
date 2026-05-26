@@ -72,7 +72,14 @@ double	calc_disorder(t_list *stack)
 static void	adaptive_sort(t_list **stack_a, t_list **stack_b, t_counts *counts)
 {
 	double	disorder;
+	int		size;
 
+	size = stack_size(*stack_a);
+	if (size <= 5)
+	{
+		sort_turk(stack_a, stack_b, counts);
+		return ;
+	}
 	disorder = calc_disorder(*stack_a);
 	if (disorder < 0.2)
 		sort_simple(stack_a, stack_b, counts);
