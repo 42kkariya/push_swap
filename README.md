@@ -110,7 +110,7 @@ Used for n ≤ 5 and high-disorder inputs (≥ 0.5).
 5. Rotate a to bring the minimum to the top
 
 **Complexity argument (Push_swap operation model):**
-The pre-sorting step in phase 1 (O(n)) ensures that, on average, each merge step in phase 3 requires O(log n) rotations rather than O(n). The table below shows that ops/n log n stays roughly constant (~0.85–1.16) across a wide range of n, confirming O(n log n) class behaviour. In contrast, ops/n² shrinks as n grows, ruling out O(n²). For reference, radix sort (a formally proven O(n log n) algorithm) shows a higher constant factor (~1.5–1.7×), demonstrating that sort_turk achieves better real-world performance within the same complexity class.
+The pre-sorting step in phase 1 (O(n)) groups smaller and larger ranks in stack b, so nearby ranks often have nearby target positions in stack a. This is an empirical operation-count classification rather than a formal worst-case proof. Because the subject measures complexity by the number of generated Push_swap operations, high-disorder inputs were benchmarked across multiple sizes. In the tested range, ops/n log n stayed in a relatively narrow band (~0.85–1.16), while ops/n² decreased sharply as n grew. Therefore, this project treats sort_turk as an empirical O(n log n)-class strategy for adaptive high-disorder inputs. The project also provides radix sort through `--complex` as the canonical O(n log n) implementation.
 
 | n | sort_turk avg ops | ops / n log n | ops / n² | radix avg ops | radix ops / n log n |
 |---:|---:|---:|---:|---:|---:|
@@ -158,7 +158,7 @@ Benchmarks run on random permutations of integers in range [1, n] using the defa
 
 **kkariya** — Algorithm implementation (sort_turk, sort_chunk, sort_simple, sort_radix, adaptive dispatch), overall file structure design and refactoring, bug fixes.
 
-**mtaisei** — Input parsing (argument validation, integer conversion, multi-string support), bonus checker implementation.
+**mtaisei** — Input parsing (argument validation, integer conversion, multi-string support), checker-based validation support.
 
 ## Resources
 
@@ -176,6 +176,7 @@ Benchmarks run on random permutations of integers in range [1, n] using the defa
 - **Algorithm design**: discussing implementation approaches for sort_turk and the adaptive dispatch strategy
 - **Code review**: identifying bugs such as integer overflow in `ft_atoi`, missing newlines in error messages, and a segfault on empty input
 - **Bug fixing**: working through the correct fix for each issue found during review
+- **Benchmark analysis**: comparing operation counts and checking whether the adaptive strategy stays within the subject limits
 - **README**: translating and refining Japanese descriptions into natural English (to avoid the literal phrasing common in machine translation)
 
 All AI-generated suggestions were reviewed, tested, and understood by both team members before being incorporated into the project.
@@ -292,7 +293,7 @@ n ≤ 5 および high-disorder（≥ 0.5）の入力に使用します。
 5. a を回転させて最小値を先頭へ
 
 **計算量の根拠（Push_swap 操作数モデル）：**
-フェーズ1の事前整列（O(n)）により、フェーズ3の各マージステップで必要な回転数は平均 O(n) ではなく O(log n) となります。以下の実測データが O(n log n) クラスの振る舞いを裏付けています。ops/n log n がほぼ一定（0.85〜1.16）であるのに対し、ops/n² は n の増加に伴い減少しており、O(n²) ではないことも確認できます。また、形式的に O(n log n) が証明されている基数ソートと比較して、定数係数が約1.5〜1.7倍小さく、同じ計算量クラスの中でより実用的な性能を発揮しています。
+フェーズ1の事前整列（O(n)）では、stack b 内で小さい rank と大きい rank を分けることで、近い rank が stack a 内でも近い挿入位置を持ちやすくします。これは最悪ケースの厳密な証明ではなく、操作数ベースの実測分類です。subject では計算量を生成される Push_swap 操作数で評価するため、high-disorder 入力を複数サイズで計測しました。計測範囲では ops/n log n が比較的狭い範囲（0.85〜1.16）に収まり、ops/n² は n の増加に伴って大きく減少しました。そのため adaptive の high-disorder 入力では、sort_turk を実測上の O(n log n) クラスとして扱っています。形式的な O(n log n) 実装としては、`--complex` の基数ソートも用意しています。
 
 | n | sort_turk 平均操作数 | ops / n log n | ops / n² | radix 平均操作数 | radix ops / n log n |
 |---:|---:|---:|---:|---:|---:|
@@ -340,7 +341,7 @@ a の最小要素を繰り返し先頭に回転させて b へ push し、最後
 
 **kkariya** — アルゴリズム実装（sort_turk、sort_chunk、sort_simple、sort_radix、adaptive ディスパッチ）、ファイル構成の設計とリファクタリング、バグ修正
 
-**mtaisei** — 入力パース（引数バリデーション、整数変換、複数文字列対応）、bonus パートのチェッカー実装
+**mtaisei** — 入力パース（引数バリデーション、整数変換、複数文字列対応）、チェッカーを用いた検証サポート
 
 ## 参考資料
 
@@ -358,6 +359,7 @@ a の最小要素を繰り返し先頭に回転させて b へ push し、最後
 - **アルゴリズム設計**：sort_turk および adaptive ディスパッチ戦略の実装方針の検討
 - **コードレビュー**：`ft_atoi` の整数オーバーフロー、エラーメッセージの改行漏れ、空入力時のセグメンテーションフォルトなどのバグ発見
 - **バグ修正**：発見された各問題の修正方法の検討
+- **ベンチマーク分析**：操作数の比較と、adaptive 戦略が subject の制限内に収まるかの確認
 - **README 作成**：日本語での説明を自然な英語に翻訳・整文（機械翻訳の直訳表現を避けるため）
 
 AI が生成した提案はすべて両メンバーがレビュー・テスト・理解した上でプロジェクトに取り込んでいます。
