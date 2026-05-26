@@ -173,8 +173,6 @@ Benchmarks run on random permutations of integers in range [1, n] using the defa
 
 ### AI Usage
 
-**kkariya** used Claude (Anthropic) for the following tasks:
-
 - **Algorithm design**: discussing implementation approaches for sort_turk and the adaptive dispatch strategy
 - **Code review**: identifying bugs such as integer overflow in `ft_atoi`, missing newlines in error messages, and a segfault on empty input
 - **Bug fixing**: working through the correct fix for each issue found during review
@@ -356,8 +354,6 @@ a の最小要素を繰り返し先頭に回転させて b へ push し、最後
 - Push_swap subject (Version 1.1) — 42 Tokyo
 
 ### AI の使用について
-
-**kkariya** が Claude（Anthropic）を以下の用途で使用しました：
 
 - **アルゴリズム設計**：sort_turk および adaptive ディスパッチ戦略の実装方針の検討
 - **コードレビュー**：`ft_atoi` の整数オーバーフロー、エラーメッセージの改行漏れ、空入力時のセグメンテーションフォルトなどのバグ発見
