@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 19:14:55 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/20 19:14:55 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/26 14:34:16 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	print_strategy(t_frag *frag, double disorder)
 		ft_printf(2, "%s", "[bench] strategy: Complex / O(n log n)\n");
 	else if (disorder < 0.2)
 		ft_printf(2, "%s", "[bench] strategy: Adaptive / O(n^2)\n");
-	else if (disorder < 0.7)
+	else if (disorder < 0.5)
 		ft_printf(2, "%s", "[bench] strategy: Adaptive / O(n*sqrt(n))\n");
 	else
 		ft_printf(2, "%s", "[bench] strategy: Adaptive / O(n log n)\n");
