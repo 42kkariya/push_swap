@@ -20,6 +20,7 @@ SRCS =	main.c\
 		srcs/frag/bench.c\
 		srcs/list/ft_list.c\
 		srcs/utils/ft_argv_check.c\
+		srcs/utils/ft_argv_check_utils.c\
 		srcs/utils/ft_utils.c\
 		srcs/printf/ft_printf.c\
 		srcs/printf/ft_print_nbr_base.c\
