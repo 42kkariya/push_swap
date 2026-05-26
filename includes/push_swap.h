@@ -80,9 +80,11 @@ void	ft_list_add_back(t_list **cy_list, t_list *node);
 // src
 
 void	ft_argv_check(int argc, char **argv, t_list **cy_list);
-void	ft_nbrcheck(int *map, int j);
+void	ft_nbrcheck(int *map, int j, int argc, char **argv);
 int		ft_check(int nb, int *map, int size);
 int		ft_atoi(char *nb, t_list **cy_list);
+void	ft_argv_error(int argc, char **argv, int *map);
+int		ft_fill_map(int argc, char **argv, int *map);
 void	ft_exit(int error, t_list *cy_list);
 
 // printf
