@@ -163,9 +163,10 @@ Benchmarks run on random permutations of integers in range [1, n] using the defa
 ## Resources
 
 - [push_swap アルゴリズム解説 (Zenn)](https://zenn.dev/uta_san1012/articles/bfa9cabfeadc51)
-- [push_swap の実装 (Qiita)](https://qiita.com/MoriP-K/articles/54ee96dc634148cf40a8)
+- [push_swap の実装 (Qiita)](https://qiita.com/MoriP-K/items/54ee96dc634148cf40a8)
 - [push_swap turk algorithm explained (Medium)](https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0)
 - [転倒数 (Qiita)](https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0)
+- [push_swap 解説 (Qiita)](https://qiita.com/jay_42tokyo/items/88175f7461ab18954622)
 - [push_swap visualizer](https://github.com/o-reo/push_swap_visualizer)
 - [push_swap tester](https://github.com/nafuka11/push_swap_tester)
 - [DeepL Translator](https://www.deepl.com/ja/translator)
@@ -346,9 +347,10 @@ a の最小要素を繰り返し先頭に回転させて b へ push し、最後
 ## 参考資料
 
 - [push_swap アルゴリズム解説 (Zenn)](https://zenn.dev/uta_san1012/articles/bfa9cabfeadc51)
-- [push_swap の実装 (Qiita)](https://qiita.com/MoriP-K/articles/54ee96dc634148cf40a8)
+- [push_swap の実装 (Qiita)](https://qiita.com/MoriP-K/items/54ee96dc634148cf40a8)
 - [push_swap turk algorithm explained (Medium)](https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0)
 - [転倒数 (Qiita)](https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0)
+- [push_swap 解説 (Qiita)](https://qiita.com/jay_42tokyo/items/88175f7461ab18954622)
 - [push_swap visualizer](https://github.com/o-reo/push_swap_visualizer)
 - [push_swap tester](https://github.com/nafuka11/push_swap_tester)
 - [DeepL Translator](https://www.deepl.com/ja/translator)
