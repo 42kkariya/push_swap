@@ -6,7 +6,7 @@
 /*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:43:47 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/29 17:17:00 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/05/31 13:25:30 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,13 @@ void	checker_free_all(int new_argc, char **new_argv, t_list *a_stack);
 int		checker_strcmp(char *src, char *dest);
 int		is_sorted(t_list *a_stack);
 int		empty(t_list *b_stack);
-void	ft_checker(t_list *a_stack);
+int		ft_checker(t_list **a_stack);
 void	check_stack(t_list *a_stack, t_list *b_stack);
 void	checker_swap(char *line, t_list **a_stack, t_list **b_stack);
+int		linecheck(char *line);
+int		free_b_stack(t_list *b_stack);
+int		ft_fragcheck(t_list *a_stack, t_frag frag,
+					char **new_argv, int	new_argc);
 
 // shared push_swap utils
 void	ft_check_frag(char *argv, t_frag *frag, t_list **cy_list);
