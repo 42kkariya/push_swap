@@ -6,7 +6,7 @@
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/06/01 13:51:01 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/06/01 14:08:31 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int		ft_print_ptr(void *ptr, int fd);
 int		ft_print_nbr_base(unsigned long n, char *base, int fd);
 int		ft_print_double(double n, int fd);
 
-/* oparation */
+/* operation */
 void	sa(t_list **stack_a, t_counts *counts);
 void	sb(t_list **stack_b, t_counts *counts);
 void	ss(t_list **stack_a, t_list **stack_b, t_counts *counts);
