@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 00:00:00 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/24 00:00:00 by kkariya          ###   ########.fr       */
+/*   Created: 2026/05/24 21:57:10 by kkariya           #+#    #+#             */
+/*   Updated: 2026/06/01 13:57:43 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_make_cy_list(t_list	**cy_list, t_frag *frag, int argc, char **argv)
 	while (i < argc)
 	{
 		if (argv[i][0] == '-' && argv[i][1] == '-')
-			ft_check_frag(&argv[i][2], frag, cy_list);
+			ft_check_frag(&argv[i][2], frag);
 		else if ((argv[i][0] >= '0' && argv[i][0] <= '9')
 				|| argv[i][0] == '-' || argv[i][0] == '+')
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/29 16:00:21 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/06/01 13:51:01 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct s_stacks
 
 // frag
 
-void	ft_check_frag(char *argv, t_frag *frag, t_list **cy_list);
+void	ft_check_frag(char *argv, t_frag *frag);
 int		ft_strcmp(char *dest, char *src);
 void	zerofrag(t_frag *frag);
 void	zerocount(t_counts *counts);

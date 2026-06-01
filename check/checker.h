@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:43:47 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/31 13:25:30 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/06/01 13:46:14 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ void	checker_swap(char *line, t_list **a_stack, t_list **b_stack);
 int		linecheck(char *line);
 int		free_b_stack(t_list *b_stack);
 int		ft_fragcheck(t_list *a_stack, t_frag frag,
-					char **new_argv, int	new_argc);
+			char **new_argv, int new_argc);
 
 // shared push_swap utils
-void	ft_check_frag(char *argv, t_frag *frag, t_list **cy_list);
+void	ft_check_frag(char *argv, t_frag *frag);
 void	zerofrag(t_frag *frag);
 int		ft_strcmp(char *dest, char *src);
 void	ft_argv_check(int argc, char **argv, t_list **cy_list);

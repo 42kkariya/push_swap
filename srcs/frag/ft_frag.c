@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 00:00:00 by kkariya           #+#    #+#             */
-/*   Updated: 2026/05/24 00:00:00 by kkariya          ###   ########.fr       */
+/*   Created: 2026/05/24 21:57:10 by kkariya           #+#    #+#             */
+/*   Updated: 2026/06/01 13:56:57 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ int	ft_strcmp(char *dest, char *src)
 	return ((unsigned char)dest[i] - (unsigned char)src[i]);
 }
 
-void	ft_check_frag(char	*argv, t_frag *frag, t_list **cy_list)
+void	ft_check_frag(char	*argv, t_frag *frag)
 {
-	(void)cy_list;
 	if (!ft_strcmp(argv, "simple"))
 	{
 		frag->sim++;
