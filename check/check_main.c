@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:42:52 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/31 13:24:57 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/06/01 14:23:19 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 }
 
 int	ft_fragcheck(t_list *a_stack,
-					t_frag frag, char **new_argv, int	new_argc)
+					t_frag frag, char **new_argv, int new_argc)
 {
 	int		i;
 	t_list	*next;

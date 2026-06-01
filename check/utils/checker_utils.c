@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 14:56:44 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/29 17:39:03 by mtaisei          ###   ########.fr       */
+/*   Updated: 2026/06/01 14:23:32 by kkariya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	is_sorted(t_list *a_stack)
 int	empty(t_list *b_stack)
 {
 	if (b_stack == NULL)
-			return (TRUE);
+		return (TRUE);
 	return (FALSE);
 }
 
