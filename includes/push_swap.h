@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkariya <kkariya@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: mtaisei <mtaisei@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 15:07:25 by mtaisei           #+#    #+#             */
-/*   Updated: 2026/05/21 17:05:37 by kkariya          ###   ########.fr       */
+/*   Updated: 2026/05/29 16:00:21 by mtaisei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_join_list(t_list **cy_list);
 t_list	*ft_listlast(t_list *cy_list);
 t_list	*ft_listnew(int nb, t_list **cy_list);
 void	ft_make_cy_list(t_list **cy_list, t_frag *frag, int argc, char **argv);
-void	ft_list_add_back(t_list **cy_list, t_list *node);
+void	ft_list_add_back(t_list **cy_list, t_list	*new);
 
 // src
 
